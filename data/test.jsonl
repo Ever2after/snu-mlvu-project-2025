@@ -1,0 +1,4 @@
+{"id": 0, "text": "Describe the image.", "images": ["test1.jpg"]}
+{"id": 1, "text": "Describe the image.", "images": ["test2.jpg"]}
+{"id": 2, "text": "Describe each image.", "images": ["test1.jpg", "test2.jpg"]}
+{"id": 3, "text": "Describe the video.", "videos": ["test1_360_640_24fps.mp4"]}
