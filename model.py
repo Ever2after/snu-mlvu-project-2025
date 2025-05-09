@@ -52,7 +52,7 @@ class Model:
                 device_map="auto",
                 torch_dtype=torch.bfloat16,
                 low_cpu_mem_usage=True,
-                attn_implementation="eager"    #"flash_attention_2",
+                attn_implementation="flash_attention_2",
             )
             processor = AutoProcessor.from_pretrained(MODEL_ID, trust_remote_code=True)
             model.eval()
@@ -65,11 +65,21 @@ class Model:
                 MODEL_ID, 
                 torch_dtype=torch.bfloat16, 
                 low_cpu_mem_usage=True,
-                use_flash_attention_2=False  #True
+                use_flash_attention_2=True
             ).to("cuda")
             processor = LlavaNextVideoProcessor.from_pretrained(MODEL_ID)
             model.eval()
             return model, None, processor
+        elif 'internvideo2' in self.model_name:
+            from transformers import AutoModel, AutoTokenizer
+            MODEL_ID = 'OpenGVLab/InternVideo2_5_Chat_8B'
+            model = AutoModel.from_pretrained(
+                MODEL_ID,
+                low_cpu_mem_usage=True,
+                use_flash_attn=True,
+                trust_remote_code=True).half().cuda().to(torch.bfloat16)
+            tokenizer = AutoTokenizer.from_pretrained(MODEL_ID, trust_remote_code=True, use_fast=False)
+            return model, tokenizer, None
         
 
         elif 'gpt' in self.model_name:
@@ -323,7 +333,26 @@ class Model:
                 output = self.model.generate(**inputs_video, do_sample=True, **kwargs)
                 response = self.processor.decode(output[0][2:], skip_special_tokens=True)
                 return extract_assistant_response(response)
-
+        #ONLY VIDEO
+        elif 'internvideo2' in self.model_name:
+            import os
+            import torch
+            if 'videos' not in query.keys():
+                raise ValueError("No video input found.")
+            from internvl_utils import load_video
+            max_num_frames = 512
+            num_segments = kwargs.get("max_frames", 8)
+            kwargs = {k: v for k, v in kwargs.items() if k != "fps" or k != "max_frames"}
+            generation_config = dict(**kwargs, do_sample=True)
+            video_path = os.path.join(data_path, query['videos'][0])
+            with torch.no_grad():
+                pixel_values, num_patches_list = load_video(video_path, num_segments=num_segments, max_num=1)
+                pixel_values = pixel_values.to(torch.bfloat16).to(self.model.device)
+                video_prefix = "".join([f"Frame{i+1}: <image>\n" for i in range(len(num_patches_list))])
+                question1 = query['text']
+                question = video_prefix + question1
+                output1 = self.model.chat(self.tokenizer, pixel_values, question, generation_config, num_patches_list=num_patches_list, history=None, return_history=False)
+                return output1
 
 
         elif 'gpt' in self.model_name:
