@@ -8,8 +8,9 @@ def parse_args():
     
     parser.add_argument('--dataDir', type=str, default='./data', help='Directory containing the data')
     parser.add_argument('--outputDir', type=str, default='./output', help='Directory to save the output')
-    parser.add_argument('--dataset', default='test', choices=['test'], help='Dataset names')
+    parser.add_argument('--dataset', default='test', choices=['test', 'test2'], help='Dataset names')
     parser.add_argument('--model', default='qwen2.5-vl-7b', choices=['qwen2.5-vl-3b', 'qwen2.5-vl-7b', 'llava-ov-chat', 'internvl3-2b', 'internvl3-8b',
+                                                                     'video-llama3-7b', 'llava-next-video-7b',
                                                                      'gpt-4o', 'gpt-4o-mini', 'gpt-4.1', 'gpt-4.1-mini', 'gpt-4.1-nano',
                                                                      'gemini-2.0-flash', 'gemini-2.0-pro', 'gemini-2.5-flash', 'gemini-2.5-pro'], help='Model name')
 
@@ -32,7 +33,6 @@ def main(args):
     for query in queries:
         kwargs = {'max_new_tokens': args.max_new_tokens, 'temperature': args.temperature, 'top_p': args.top_p}
         result = model.generate(query, os.path.join(args.dataDir, args.dataset), **kwargs)
-        # print(f"Query: {query['text']}, Result: {result}")
         query['result'] = result
         results.append(query)
     # save results

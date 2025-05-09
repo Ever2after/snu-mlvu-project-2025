@@ -18,6 +18,7 @@ class Model:
                 attn_implementation="flash_attention_2",
                 device_map="auto")
             processor = AutoProcessor.from_pretrained(MODEL_ID)
+            model.eval()
             return model, None, processor
         elif 'llava-ov-chat' in self.model_name:
             from llava.model.builder import load_pretrained_model
@@ -40,6 +41,37 @@ class Model:
                 device_map=device_map).eval()
             tokenizer = AutoTokenizer.from_pretrained(MODEL_ID, trust_remote_code=True, use_fast=False)
             return model, tokenizer, None
+        
+        #video specialized
+        elif 'video-llama3' in self.model_name:
+            from transformers import AutoModelForCausalLM, AutoProcessor, AutoModel, AutoImageProcessor
+            MODEL_ID = "DAMO-NLP-SG/VideoLLaMA3-7B"
+            model = AutoModelForCausalLM.from_pretrained(
+                MODEL_ID,
+                trust_remote_code=True,
+                device_map="auto",
+                torch_dtype=torch.bfloat16,
+                low_cpu_mem_usage=True,
+                attn_implementation="eager"    #"flash_attention_2",
+            )
+            processor = AutoProcessor.from_pretrained(MODEL_ID, trust_remote_code=True)
+            model.eval()
+            return model, None, processor
+        elif 'llava-next-video' in self.model_name:
+            from huggingface_hub import hf_hub_download
+            from transformers import LlavaNextVideoProcessor, LlavaNextVideoForConditionalGeneration
+            MODEL_ID = "llava-hf/LLaVA-NeXT-Video-7B-hf"
+            model = LlavaNextVideoForConditionalGeneration.from_pretrained(
+                MODEL_ID, 
+                torch_dtype=torch.bfloat16, 
+                low_cpu_mem_usage=True,
+                use_flash_attention_2=False  #True
+            ).to("cuda")
+            processor = LlavaNextVideoProcessor.from_pretrained(MODEL_ID)
+            model.eval()
+            return model, None, processor
+        
+
         elif 'gpt' in self.model_name:
             from openai import OpenAI
             client = OpenAI()
@@ -110,8 +142,10 @@ class Model:
             inputs = inputs.to("cuda")
             # Inference
             kwargs = {k: v for k, v in kwargs.items() if k != "fps"}
+            print("generating")
                 
-            generated_ids = self.model.generate(**inputs, **kwargs)
+            generated_ids = self.model.generate(**inputs, **kwargs, use_cache = False,
+                                                output_attentions=False, output_hidden_states=False)
             generated_ids_trimmed = [
                 out_ids[len(in_ids) :] for in_ids, out_ids in zip(inputs.input_ids, generated_ids)
             ]
@@ -178,6 +212,120 @@ class Model:
                 generation_config = dict(**kwargs, do_sample=True)
                 response, history = self.model.chat(self.tokenizer, None, question, generation_config, history=history, return_history=True)
                 return response
+
+
+        #video specialized
+        #cannot input video due to ffmpeg error (llama3)
+        elif 'video-llama3' in self.model_name:
+            import torch
+            from PIL import Image
+            import os
+            if 'images' in query.keys():
+                visuals = [
+                    Image.open(os.path.join(data_path, img_p)).convert("RGB")
+                    for img_p in query['images']
+                ]
+                content = []
+                for img in visuals:
+                    content.append({"type":"image", "image": img})
+                content.append({
+                    "type":"text",
+                    "text": query['text']
+                })
+                conversation = [
+                    {"role":"user", "content": content}
+                ]
+            elif 'videos' in query.keys():
+                conversation = [{
+                    "role": "user",
+                    "content": [{
+                        "type": "video",
+                        "video": {
+                            "video_path": os.path.abspath(os.path.join(data_path, vp)),
+                            "fps":        kwargs.get("fps", 30),
+                            "max_frames": kwargs.get("max_frames", 8),
+                        }
+                    } for vp in query['videos']] + [
+                        {"type": "text", "text": query['text']}
+                    ]
+                }]
+            inputs = self.processor(
+                conversation=conversation,
+                return_tensors="pt",
+            )
+            inputs = {k: (v.cuda() if isinstance(v, torch.Tensor) else v)
+                    for k, v in inputs.items()}
+            if "pixel_values" in inputs:
+                inputs["pixel_values"] = inputs["pixel_values"].to(torch.bfloat16)
+            clean_kwargs = {k: v for k, v in kwargs.items() if k != "fps"}
+            output_ids = self.model.generate(**inputs, **clean_kwargs)
+            response = self.processor.batch_decode(
+                output_ids, skip_special_tokens=True
+            )[0].strip()
+            return response
+        elif 'llava-next-video' in self.model_name:
+            import os
+            import requests
+            from utils import extract_assistant_response
+            if 'images' in query.keys():
+                from PIL import Image
+                import torch
+                conversation = [{
+                    "role": "user",
+                    "content": [{
+                        "type": "image",
+                    } for i in range(len(query['images']))]
+                }]
+            elif 'videos' in query.keys():
+                from utils import read_video_pyav
+                import av
+                import numpy as np
+                conversation = [{
+                    "role": "user",
+                    "content": [{
+                        "type": "video",
+                    } for i in range(len(query['videos']))]
+                }]
+            conversation[0]['content'].append({
+                "type": "text", 
+                "text": query['text']
+            })
+            prompt = self.processor.apply_chat_template(
+                conversation,
+                add_generation_prompt=True,
+            )
+            if 'images' in query.keys():
+                path = []
+                for image_path in query['images']:
+                    path.append(os.path.abspath(os.path.join(data_path, image_path)))
+                raw_images = [Image.open(p) for p in path]
+                inputs = self.processor(
+                    text=prompt,
+                    images=raw_images,
+                    return_tensors="pt",
+                ).to("cuda", torch.bfloat16)
+                kwargs = {k: v for k, v in kwargs.items() if k != "fps"}
+                output = self.model.generate(**inputs, do_sample=True, **kwargs)
+                response = self.processor.decode(output[0][2:], skip_special_tokens=True)
+                return extract_assistant_response(response)
+            elif 'videos' in query.keys():
+                clips = []
+                for video_path in query['videos']:
+                    container = av.open(f"file://{os.path.abspath(os.path.join(data_path, video_path))}")
+                    total_frames = container.streams.video[0].frames
+                    num_frames = kwargs.get("max_frames", 8)
+                    indices = np.linspace(
+                        0, total_frames - 1, num=num_frames, dtype=int)
+                    clip = read_video_pyav(container, indices)  # shape: [T, C, H, W]
+                    clips.append(clip)
+                inputs_video = self.processor(text=prompt, videos=clips, padding=True, return_tensors="pt").to(self.model.device)
+                kwargs = {k: v for k, v in kwargs.items() if k != "fps"}
+                output = self.model.generate(**inputs_video, do_sample=True, **kwargs)
+                response = self.processor.decode(output[0][2:], skip_special_tokens=True)
+                return extract_assistant_response(response)
+
+
+
         elif 'gpt' in self.model_name:
             from utils import encode_image
             input = [{'role': 'user', 'content': [
