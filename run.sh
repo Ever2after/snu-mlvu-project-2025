@@ -7,6 +7,8 @@ python3 inference.py \
     --outputDir ./output \
     --dataset test \
     --model qwen2.5-vl-3b \
-    --max_new_tokens 512 \
+    --max_new_tokens 128 \
     --temperature 0.1 \
-    --top_p 0.9
+    --top_p 0.9 \
+    --fps 30 \
+    --max_frames 8 \

@@ -2,6 +2,7 @@ from transformers import AutoTokenizer, AutoProcessor, AutoModel
 import os
 import torch
 import sys
+from utils import generate_kwargs
 
 class Model:
     def __init__(self, model_name):
@@ -76,7 +77,7 @@ class Model:
             model = AutoModel.from_pretrained(
                 MODEL_ID,
                 low_cpu_mem_usage=True,
-                use_flash_attn=True,
+                use_flash_attn=False,
                 trust_remote_code=True).half().cuda().to(torch.bfloat16)
             tokenizer = AutoTokenizer.from_pretrained(MODEL_ID, trust_remote_code=True, use_fast=False)
             return model, tokenizer, None
@@ -150,11 +151,8 @@ class Model:
                     return_tensors="pt",
                 )
             inputs = inputs.to("cuda")
-            # Inference
-            kwargs = {k: v for k, v in kwargs.items() if k != "fps"}
-            print("generating")
-                
-            generated_ids = self.model.generate(**inputs, **kwargs, use_cache = False,
+            # Inference        
+            generated_ids = self.model.generate(**inputs, **generate_kwargs(**kwargs), use_cache = False,
                                                 output_attentions=False, output_hidden_states=False)
             generated_ids_trimmed = [
                 out_ids[len(in_ids) :] for in_ids, out_ids in zip(inputs.input_ids, generated_ids)
@@ -190,7 +188,7 @@ class Model:
                 input_ids,
                 images=image_tensor,
                 image_sizes=image_sizes,
-                **kwargs,
+                **generate_kwargs(**kwargs),
             )
             text_outputs = self.tokenizer.batch_decode(cont, skip_special_tokens=True)
             return text_outputs[0]
@@ -201,7 +199,7 @@ class Model:
                 pixel_values = torch.cat(pixel_values_, dim=0)
                 num_patches_list = [pixel_values.size(0) for pixel_values in pixel_values_]     
                 question = "\n".join([f'Image-{idx+1}: <image>' for idx in range(len(query['images']))]) + "\n" + query['text']
-                generation_config = dict(**kwargs, do_sample=True)
+                generation_config = dict(**generate_kwargs(**kwargs), do_sample=True)
                 response, history = self.model.chat(self.tokenizer, pixel_values, question, generation_config,
                             num_patches_list=num_patches_list,
                             history=None, return_history=True)
@@ -214,12 +212,12 @@ class Model:
                 video_prefix = ''.join([f'Frame{i+1}: <image>\n' for i in range(len(num_patches_list))])
                 question = video_prefix + query['text']
                 # Frame1: <image>\nFrame2: <image>\n...\nFrame8: <image>\n{question}
-                generation_config = dict(**kwargs, do_sample=True)
+                generation_config = dict(**generate_kwargs(**kwargs), do_sample=True)
                 response, history = self.model.chat(self.tokenizer, pixel_values, question, generation_config,
                                             num_patches_list=num_patches_list, history=None, return_history=True)
                 return response
             else:
-                generation_config = dict(**kwargs, do_sample=True)
+                generation_config = dict(**generate_kwargs(**kwargs), do_sample=True)
                 response, history = self.model.chat(self.tokenizer, None, question, generation_config, history=history, return_history=True)
                 return response
 
@@ -267,8 +265,7 @@ class Model:
                     for k, v in inputs.items()}
             if "pixel_values" in inputs:
                 inputs["pixel_values"] = inputs["pixel_values"].to(torch.bfloat16)
-            clean_kwargs = {k: v for k, v in kwargs.items() if k != "fps"}
-            output_ids = self.model.generate(**inputs, **clean_kwargs)
+            output_ids = self.model.generate(**inputs, **generate_kwargs(**kwargs))
             response = self.processor.batch_decode(
                 output_ids, skip_special_tokens=True
             )[0].strip()
@@ -314,8 +311,7 @@ class Model:
                     images=raw_images,
                     return_tensors="pt",
                 ).to("cuda", torch.bfloat16)
-                kwargs = {k: v for k, v in kwargs.items() if k != "fps"}
-                output = self.model.generate(**inputs, do_sample=True, **kwargs)
+                output = self.model.generate(**inputs, do_sample=True, **generate_kwargs(**kwargs))
                 response = self.processor.decode(output[0][2:], skip_special_tokens=True)
                 return extract_assistant_response(response)
             elif 'videos' in query.keys():
@@ -329,8 +325,7 @@ class Model:
                     clip = read_video_pyav(container, indices)  # shape: [T, C, H, W]
                     clips.append(clip)
                 inputs_video = self.processor(text=prompt, videos=clips, padding=True, return_tensors="pt").to(self.model.device)
-                kwargs = {k: v for k, v in kwargs.items() if k != "fps"}
-                output = self.model.generate(**inputs_video, do_sample=True, **kwargs)
+                output = self.model.generate(**inputs_video, do_sample=True, **generate_kwargs(**kwargs))
                 response = self.processor.decode(output[0][2:], skip_special_tokens=True)
                 return extract_assistant_response(response)
         #ONLY VIDEO
@@ -342,8 +337,7 @@ class Model:
             from internvl_utils import load_video
             max_num_frames = 512
             num_segments = kwargs.get("max_frames", 8)
-            kwargs = {k: v for k, v in kwargs.items() if k != "fps" or k != "max_frames"}
-            generation_config = dict(**kwargs, do_sample=True)
+            generation_config = dict(**generate_kwargs(**kwargs), do_sample=True)
             video_path = os.path.join(data_path, query['videos'][0])
             with torch.no_grad():
                 pixel_values, num_patches_list = load_video(video_path, num_segments=num_segments, max_num=1)

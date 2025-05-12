@@ -49,3 +49,18 @@ def extract_assistant_response(response):
     match = re.search(r"ASSISTANT:\s*(.+)", response, flags=re.DOTALL)
     # If found, return the captured group; otherwise return empty
     return match.group(1).strip() if match else ""
+
+def generate_kwargs(**kwargs):
+    g_list = [
+        "max_length", "max_new_tokens", "min_length", "do_sample",
+        "early_stopping", "num_beams", "num_return_sequences",
+        "temperature", "top_k", "top_p", "repetition_penalty",
+        "length_penalty", "no_repeat_ngram_size",
+        "pad_token_id", "bos_token_id", "eos_token_id", "use_cache",
+        "return_dict_in_generate", "output_scores"
+    ]
+    return {
+        k: v
+        for k, v in kwargs.items()
+        if k in g_list and v is not None
+    }

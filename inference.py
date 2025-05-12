@@ -17,6 +17,8 @@ def parse_args():
     parser.add_argument('--max_new_tokens', type=int, default=512, help='Maximum number of new tokens to generate')
     parser.add_argument('--temperature', type=float, default=0.1, help='Temperature for sampling')
     parser.add_argument('--top_p', type=float, default=0.9, help='Top-p sampling')
+    parser.add_argument('--fps', type=int, default=30, help='frames per second for video')
+    parser.add_argument('--max_frames', type=int, default=8, help='maximum number of frames to sample from the video')
 
     return parser.parse_args()
 
