@@ -1,24 +1,32 @@
-from transformers import AutoTokenizer, AutoProcessor, AutoModel
+from transformers import AutoTokenizer, AutoProcessor, AutoModel, AutoModelForCausalLM
 import os
 import torch
 import sys
 from utils import generate_kwargs
+import av
+import numpy as np
 
 class Model:
-    def __init__(self, model_name):
+    def __init__(self, model_name, model_path=None):
         self.model_name = model_name
+        self.model_path = model_path
         self.model, self.tokenizer, self.processor = self.load_model()
     
     def load_model(self):
         if 'qwen2.5-vl' in self.model_name:
             from transformers import Qwen2_5_VLForConditionalGeneration
-            MODEL_ID = f"qwen/{self.model_name}-instruct"
+            if 'sft' in self.model_name:
+                print("Loading SFT model...")
+                MODEL_ID = self.model_path
+                processor = AutoProcessor.from_pretrained("qwen/qwen2.5-vl-3b-instruct")
+            else:
+                MODEL_ID = f"qwen/{self.model_name}-instruct"
+                processor = AutoProcessor.from_pretrained(MODEL_ID)
             model = Qwen2_5_VLForConditionalGeneration.from_pretrained(
                 MODEL_ID, 
                 torch_dtype=torch.bfloat16,
                 attn_implementation="flash_attention_2",
                 device_map="auto")
-            processor = AutoProcessor.from_pretrained(MODEL_ID)
             model.eval()
             return model, None, processor
         elif 'llava-ov-chat' in self.model_name:
@@ -45,7 +53,6 @@ class Model:
         
         #video specialized
         elif 'video-llama3' in self.model_name:
-            from transformers import AutoModelForCausalLM, AutoProcessor, AutoModel, AutoImageProcessor
             MODEL_ID = "DAMO-NLP-SG/VideoLLaMA3-7B"
             model = AutoModelForCausalLM.from_pretrained(
                 MODEL_ID,
@@ -59,7 +66,6 @@ class Model:
             model.eval()
             return model, None, processor
         elif 'llava-next-video' in self.model_name:
-            from huggingface_hub import hf_hub_download
             from transformers import LlavaNextVideoProcessor, LlavaNextVideoForConditionalGeneration
             MODEL_ID = "llava-hf/LLaVA-NeXT-Video-7B-hf"
             model = LlavaNextVideoForConditionalGeneration.from_pretrained(
@@ -72,7 +78,6 @@ class Model:
             model.eval()
             return model, None, processor
         elif 'internvideo2' in self.model_name:
-            from transformers import AutoModel, AutoTokenizer
             MODEL_ID = 'OpenGVLab/InternVideo2_5_Chat_8B'
             model = AutoModel.from_pretrained(
                 MODEL_ID,
@@ -152,8 +157,7 @@ class Model:
                 )
             inputs = inputs.to("cuda")
             # Inference        
-            generated_ids = self.model.generate(**inputs, **generate_kwargs(**kwargs), use_cache = False,
-                                                output_attentions=False, output_hidden_states=False)
+            generated_ids = self.model.generate(**inputs, **generate_kwargs(**kwargs))
             generated_ids_trimmed = [
                 out_ids[len(in_ids) :] for in_ids, out_ids in zip(inputs.input_ids, generated_ids)
             ]
@@ -225,9 +229,7 @@ class Model:
         #video specialized
         #cannot input video due to ffmpeg error (llama3)
         elif 'video-llama3' in self.model_name:
-            import torch
             from PIL import Image
-            import os
             if 'images' in query.keys():
                 visuals = [
                     Image.open(os.path.join(data_path, img_p)).convert("RGB")
@@ -271,12 +273,9 @@ class Model:
             )[0].strip()
             return response
         elif 'llava-next-video' in self.model_name:
-            import os
-            import requests
             from utils import extract_assistant_response
             if 'images' in query.keys():
                 from PIL import Image
-                import torch
                 conversation = [{
                     "role": "user",
                     "content": [{
@@ -285,8 +284,7 @@ class Model:
                 }]
             elif 'videos' in query.keys():
                 from utils import read_video_pyav
-                import av
-                import numpy as np
+                
                 conversation = [{
                     "role": "user",
                     "content": [{
@@ -330,8 +328,6 @@ class Model:
                 return extract_assistant_response(response)
         #ONLY VIDEO
         elif 'internvideo2' in self.model_name:
-            import os
-            import torch
             if 'videos' not in query.keys():
                 raise ValueError("No video input found.")
             from internvl_utils import load_video
