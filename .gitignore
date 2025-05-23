@@ -1,3 +1,7 @@
 output
 __pycache__
 wandb
+fluid_cache
+out
+meshes
+texture
