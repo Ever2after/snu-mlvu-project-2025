@@ -18,7 +18,8 @@ def bake_fluid_simulations():
 
                 bpy.ops.fluid.free_all()
                 time.sleep(0.5)
-                bpy.ops.fluid.bake_all()
+                bpy.ops.fluid.bake_data()
+                bpy.ops.fluid.bake_mesh()
 
 
 parser = argparse.ArgumentParser()

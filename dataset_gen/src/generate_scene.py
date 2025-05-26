@@ -7,8 +7,6 @@ import importlib.util
 from mathutils import Vector
 from contextlib import redirect_stdout
 os.chdir(os.path.dirname(os.path.abspath(sys.argv[0])))
-#sys.path.append("C:\\Users\\jason\\바탕 화면\\lecture\\시각적\\final")
-#import generate_scene_conf as conf
 
 def load_vars(conf_path):
     if not os.path.exists(conf_path):
@@ -212,7 +210,8 @@ def output_fluid_domain(mesh_name, name, settings, indent=0):
 
     top = f"{mesh_name}.DOMAIN"
     res += f"{i_str}" + chkvar(top, "_dst_settings.domain_type", settings.domain_type)
-    res += f"{i_str}" + chkvar(top, "_dst_settings.cache_type", settings.cache_type)
+    res += f"{i_str}_dst_settings.cache_type = 'MODULAR'\n"
+    res += f"{i_str}_dst_settings.cache_mesh_format = 'OBJECT'\n"
     res += f"{i_str}" + chkvar(top, "_dst_settings.resolution_max", settings.resolution_max)
     res += f"{i_str}" + chkvar(top, "_dst_settings.use_mesh", settings.use_mesh)
     res += f"{i_str}" + chkvar(top, "_dst_settings.cfl_condition", settings.cfl_condition)

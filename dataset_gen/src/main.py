@@ -22,7 +22,7 @@ def process_value(val):
 for i in os.listdir("../scene"):
     print(i)
 
-    if i != "splash": continue
+    # if i != "splash": continue
 
     # attempt to create and run the generation script
     script_path = f"../scene/{i}/out.py"
