@@ -2,7 +2,7 @@ from transformers import AutoTokenizer, AutoProcessor, AutoModel, AutoModelForCa
 import os
 import torch
 import sys
-from utils import generate_kwargs
+from utils import generate_kwargs, extract_question
 import av
 import numpy as np
 
@@ -99,38 +99,49 @@ class Model:
         
 
     def generate(self, query, data_path, **kwargs):
+        q = extract_question(query)
+        if 'image' in query.keys() and isinstance(query['image'], str):
+            query['image'] = [query['image']]
+        if 'video' in query.keys() and isinstance(query['video'], str):
+            query['video'] = [query['video']]
+
         if 'qwen2.5-vl' in self.model_name:
             from qwen_vl_utils import process_vision_info
             messages = []
-            if 'images' in query.keys():
+            if 'image' in query.keys():
                 messages = [{
                     "role": "user",
                     "content": [{
                         "type": "image",
                         "image": f"file://{os.path.abspath(os.path.join(data_path, image_path))}"
-                    } for image_path in query['images']]
+                    } for image_path in query['image']]
                 }]
-            elif 'videos' in query.keys():
+            elif 'video' in query.keys():
                 messages = [{
                     "role": "user",
                     "content": [{
                         "type": "video",
                         "video": f"file://{os.path.abspath(os.path.join(data_path, video_path))}"
-                    } for video_path in query['videos']]
+                    } for video_path in query['video']]
                 }]
             else:
                 messages = [{
                     "role": "user",
                     "content": []
                 }]
+            if kwargs.get("context_exist", False) and 'context' in query.keys():
+                messages[0]['content'].append({
+                    "type": "text",
+                    "text": query['context']
+                })
             messages[0]['content'].append({
                 "type": "text",
-                "text": query['text']
+                "text": q
             })
             text = self.processor.apply_chat_template(
                 messages, tokenize=False, add_generation_prompt=True
             )
-            if 'images' in query.keys():
+            if 'image' in query.keys():
                 image_inputs, video_inputs = process_vision_info(messages)
                 inputs = self.processor(
                     text=[text],
@@ -139,7 +150,7 @@ class Model:
                     padding=True,
                     return_tensors="pt",
                 )
-            elif 'videos' in query.keys():
+            elif 'video' in query.keys():
                 image_inputs, video_inputs = process_vision_info(messages)
                 inputs = self.processor(
                     text=[text],
@@ -165,6 +176,7 @@ class Model:
                 generated_ids_trimmed, skip_special_tokens=True, clean_up_tokenization_spaces=False
             )
             return output_text[0]
+        
         elif 'llava-ov-chat' in self.model_name:
             from llava.mm_utils import get_model_name_from_path, process_images, tokenizer_image_token
             from llava.constants import IMAGE_TOKEN_INDEX, DEFAULT_IMAGE_TOKEN, DEFAULT_IM_START_TOKEN, DEFAULT_IM_END_TOKEN, IGNORE_INDEX
@@ -174,12 +186,15 @@ class Model:
                
             device = 'cuda'
             
-            images = [Image.open(os.path.abspath(os.path.join(data_path, image_path))).convert("RGB") for image_path in query['images']]
+            images = [Image.open(os.path.abspath(os.path.join(data_path, image_path))).convert("RGB") for image_path in query['image']]
             image_tensor = process_images(images, self.processor, self.model.config)
             image_tensor = [_image.to(dtype=torch.float16, device=device) for _image in image_tensor]
 
             conv_template = "qwen_1_5"  # Make sure you use correct chat template for different models
-            question = " ".join([DEFAULT_IMAGE_TOKEN for _ in query['images']]) + "\n" + query['text']
+            if kwargs.get("context_exist", False) and 'context' in query.keys():
+                question = " ".join([DEFAULT_IMAGE_TOKEN for _ in query['image']]) + "\n" + query['context'] + "\n" + q
+            else:
+                question = " ".join([DEFAULT_IMAGE_TOKEN for _ in query['image']]) + "\n" + q
             conv = copy.deepcopy(conv_templates[conv_template])
             conv.append_message(conv.roles[0], question)
             conv.append_message(conv.roles[1], None)
@@ -196,25 +211,31 @@ class Model:
             )
             text_outputs = self.tokenizer.batch_decode(cont, skip_special_tokens=True)
             return text_outputs[0]
+    
         elif 'internvl3' in self.model_name:
-            if 'images' in query.keys():
+            if 'image' in query.keys():
                 from internvl_utils import load_image
                 pixel_values_ = [load_image(os.path.abspath(os.path.join(data_path, image_path)), max_num=12).to(torch.bfloat16).cuda() for image_path in query['images']]  
                 pixel_values = torch.cat(pixel_values_, dim=0)
-                num_patches_list = [pixel_values.size(0) for pixel_values in pixel_values_]     
-                question = "\n".join([f'Image-{idx+1}: <image>' for idx in range(len(query['images']))]) + "\n" + query['text']
+                num_patches_list = [pixel_values.size(0) for pixel_values in pixel_values_]
+                if kwargs.get("context_exist", False) and 'context' in query.keys():
+                    q = query['context'] + "\n" + q     
+                question = "\n".join([f'Image-{idx+1}: <image>' for idx in range(len(query['image']))]) + "\n" + q
                 generation_config = dict(**generate_kwargs(**kwargs), do_sample=True)
                 response, history = self.model.chat(self.tokenizer, pixel_values, question, generation_config,
                             num_patches_list=num_patches_list,
                             history=None, return_history=True)
                 return response
-            elif 'videos' in query.keys():
+            elif 'video' in query.keys():
                 from internvl_utils import load_video
-                video_path = os.path.join(data_path, query['videos'][0])
-                pixel_values, num_patches_list = load_video(video_path, num_segments=8, max_num=1)
+                video_path = os.path.join(data_path, query['video'][0])
+                num_segments = kwargs.get("max_frames", 8)
+                pixel_values, num_patches_list = load_video(video_path, num_segments=num_segments, max_num=1)
                 pixel_values = pixel_values.to(torch.bfloat16).cuda()
                 video_prefix = ''.join([f'Frame{i+1}: <image>\n' for i in range(len(num_patches_list))])
-                question = video_prefix + query['text']
+                if kwargs.get("context_exist", False) and 'context' in query.keys():
+                    q = query['context'] + "\n" + q
+                question = video_prefix + q
                 # Frame1: <image>\nFrame2: <image>\n...\nFrame8: <image>\n{question}
                 generation_config = dict(**generate_kwargs(**kwargs), do_sample=True)
                 response, history = self.model.chat(self.tokenizer, pixel_values, question, generation_config,
@@ -225,27 +246,26 @@ class Model:
                 response, history = self.model.chat(self.tokenizer, None, question, generation_config, history=history, return_history=True)
                 return response
 
-
         #video specialized
         #cannot input video due to ffmpeg error (llama3)
         elif 'video-llama3' in self.model_name:
             from PIL import Image
-            if 'images' in query.keys():
+            if 'image' in query.keys():
                 visuals = [
                     Image.open(os.path.join(data_path, img_p)).convert("RGB")
-                    for img_p in query['images']
+                    for img_p in query['image']
                 ]
                 content = []
                 for img in visuals:
                     content.append({"type":"image", "image": img})
                 content.append({
                     "type":"text",
-                    "text": query['text']
+                    "text": q
                 })
                 conversation = [
                     {"role":"user", "content": content}
                 ]
-            elif 'videos' in query.keys():
+            elif 'video' in query.keys():
                 conversation = [{
                     "role": "user",
                     "content": [{
@@ -255,8 +275,8 @@ class Model:
                             "fps":        kwargs.get("fps", 30),
                             "max_frames": kwargs.get("max_frames", 8),
                         }
-                    } for vp in query['videos']] + [
-                        {"type": "text", "text": query['text']}
+                    } for vp in query['video']] + [
+                        {"type": "text", "text": q}
                     ]
                 }]
             inputs = self.processor(
@@ -272,36 +292,41 @@ class Model:
                 output_ids, skip_special_tokens=True
             )[0].strip()
             return response
+        
         elif 'llava-next-video' in self.model_name:
             from utils import extract_assistant_response
-            if 'images' in query.keys():
+            if 'image' in query.keys():
                 from PIL import Image
                 conversation = [{
                     "role": "user",
                     "content": [{
                         "type": "image",
-                    } for i in range(len(query['images']))]
+                    } for i in range(len(query['image']))]
                 }]
-            elif 'videos' in query.keys():
+            elif 'video' in query.keys():
                 from utils import read_video_pyav
-                
                 conversation = [{
                     "role": "user",
                     "content": [{
                         "type": "video",
-                    } for i in range(len(query['videos']))]
+                    } for i in range(len(query['video']))]
                 }]
+            if 'context' in query:
+                conversation[0]['content'].append({
+                    "type": "text",
+                    "text": query['context']
+                })
             conversation[0]['content'].append({
                 "type": "text", 
-                "text": query['text']
+                "text": q
             })
             prompt = self.processor.apply_chat_template(
                 conversation,
                 add_generation_prompt=True,
             )
-            if 'images' in query.keys():
+            if 'image' in query.keys():
                 path = []
-                for image_path in query['images']:
+                for image_path in query['image']:
                     path.append(os.path.abspath(os.path.join(data_path, image_path)))
                 raw_images = [Image.open(p) for p in path]
                 inputs = self.processor(
@@ -312,9 +337,9 @@ class Model:
                 output = self.model.generate(**inputs, do_sample=True, **generate_kwargs(**kwargs))
                 response = self.processor.decode(output[0][2:], skip_special_tokens=True)
                 return extract_assistant_response(response)
-            elif 'videos' in query.keys():
+            elif 'video' in query.keys():
                 clips = []
-                for video_path in query['videos']:
+                for video_path in query['video']:
                     container = av.open(f"file://{os.path.abspath(os.path.join(data_path, video_path))}")
                     total_frames = container.streams.video[0].frames
                     num_frames = kwargs.get("max_frames", 8)
@@ -328,19 +353,19 @@ class Model:
                 return extract_assistant_response(response)
         #ONLY VIDEO
         elif 'internvideo2' in self.model_name:
-            if 'videos' not in query.keys():
+            if 'video' not in query.keys():
                 raise ValueError("No video input found.")
             from internvl_utils import load_video
-            max_num_frames = 512
             num_segments = kwargs.get("max_frames", 8)
             generation_config = dict(**generate_kwargs(**kwargs), do_sample=True)
-            video_path = os.path.join(data_path, query['videos'][0])
+            video_path = os.path.join(data_path, query['video'][0])
             with torch.no_grad():
                 pixel_values, num_patches_list = load_video(video_path, num_segments=num_segments, max_num=1)
                 pixel_values = pixel_values.to(torch.bfloat16).to(self.model.device)
                 video_prefix = "".join([f"Frame{i+1}: <image>\n" for i in range(len(num_patches_list))])
-                question1 = query['text']
-                question = video_prefix + question1
+                if kwargs.get("context_exist", False) and 'context' in query.keys():
+                    q = query['context'] + "\n" + q
+                question = video_prefix + q
                 output1 = self.model.chat(self.tokenizer, pixel_values, question, generation_config, num_patches_list=num_patches_list, history=None, return_history=False)
                 return output1
 
@@ -351,10 +376,17 @@ class Model:
                 {
                     "type": "input_image",
                     "image_url": f"data:image/jpeg;base64,{encode_image(os.path.abspath(os.path.join(data_path, image_path)))}"
-                } for image_path in query['images']
-            ] + [
-                {'type': 'input_text', 'text': query['text']}
+                } for image_path in query['image']
             ]}]
+            if kwargs.get("context_exist", False) and 'context' in query.keys():
+                input[0]['content'].append({
+                    "type": "input_text",
+                    "text": query['context']
+                })
+            input[0]['content'].append({
+                "type": "input_text",
+                "text": q
+            })
             response = self.model.responses.create(
                 model=self.model_name,
                 input=input,
@@ -380,11 +412,18 @@ class Model:
                         "mime_type":"image/jpeg",
                         "data": encode_image(os.path.abspath(os.path.join(data_path, image_path)))
                     }
-                } for image_path in query['images']
+                } for image_path in query['image']
             ] + [{
                     "text": query['text']
                 }
             ]}]
+            if kwargs.get("context_exist", False) and 'context' in query.keys():
+                contents[0]['parts'].append({
+                    "text": query['context']
+                })
+            contents[0]['parts'].append({
+                "text": q
+            })
             generationConfig = {
                 "maxOutputTokens": kwargs.get("max_new_tokens", 512),
                 "temperature": kwargs.get("temperature", 0.1),
@@ -405,11 +444,11 @@ if __name__ == "__main__":
     data_path = "./data/test"
     query1 = {
         "text": "Describe each image.",
-        "images": ["test1.jpg", "test2.jpg"],
+        "image": ["test1.jpg", "test2.jpg"],
     }
     query2 = {
         "text": "Describe the video.",
-        "videos": ["test1_360_640_24fps.mp4"],
+        "video": ["test1_360_640_24fps.mp4"],
     }
     # Load model
     model = Model(model_name)
