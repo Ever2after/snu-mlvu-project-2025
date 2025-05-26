@@ -64,3 +64,20 @@ def generate_kwargs(**kwargs):
         for k, v in kwargs.items()
         if k in g_list and v is not None
     }
+
+tag_pattern = re.compile(r'<(?:video|image)>', re.IGNORECASE)
+
+def extract_question(query):
+    q = None
+    for conv in query.get('conversations', []):
+        if conv.get('from') == 'human':
+            text = conv.get('value', '')
+            # 1) 태그를 모두 없애고
+            clean = tag_pattern.sub('', text)
+            # 2) 양쪽 공백·개행 문자를 깔끔히 제거
+            q = clean.strip()
+            break
+
+    if q is None:
+        raise ValueError("No valid question found in the query.")
+    return q

@@ -4,6 +4,7 @@ import string
 from collections import defaultdict
 import os
 from eval_metric import *
+from tqdm import tqdm
 
 def parse_args():  
     parser = argparse.ArgumentParser(description='Evaluate QA metrics on jsonl results')
@@ -40,15 +41,18 @@ def main(args):
         return
 
     results = []
-    with open(os.path.join(args.resultDir, f'{args.name}.jsonl'), 'r') as f:
-        for line in f:
-            results.append(json.loads(line))
+    with open(os.path.join(args.resultDir, f'{args.name}.json'), 'r', encoding='utf-8') as f:
+        results = json.load(f)
 
     detailed_records = []
     summary_agg: dict[str, list[float]] = defaultdict(list)
-    for result in results:
+    for result in tqdm(results, desc="Evaluating results in {}".format(args.name)):
+        ans = None
+        for conv in result.get('conversations', []):
+            if conv.get('from') == 'gpt':
+                ans = conv.get('value', '')
+                break
         pred = result["result"]
-        ans = result["answer"]
         for m in metrics:
             func = METRIC_FUNCS.get(m)
             try:

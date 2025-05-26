@@ -15,6 +15,7 @@ def parse_args():
                                                                      'gpt-4o', 'gpt-4o-mini', 'gpt-4.1', 'gpt-4.1-mini', 'gpt-4.1-nano',
                                                                      'gemini-2.0-flash', 'gemini-2.0-pro', 'gemini-2.5-flash', 'gemini-2.5-pro'], help='Model name')
     parser.add_argument('--modelPath', type=str, default='./models/checkpoint', help='Path to the model checkpoint')
+    parser.add_argument('--context_exist', type =bool, default=False, help='Whether the context exists in the dataset')
 
     parser.add_argument('--max_new_tokens', type=int, default=512, help='Maximum number of new tokens to generate')
     parser.add_argument('--temperature', type=float, default=0.1, help='Temperature for sampling')
@@ -26,10 +27,8 @@ def parse_args():
 
 def main(args):
     # load dataset
-    queries = []
-    with open(os.path.join(args.dataDir, f'{args.dataset}.jsonl'), 'r') as f:
-        for line in f:
-            queries.append(json.loads(line))
+    with open(os.path.join(args.dataDir, f'{args.dataset}.json'), 'r', encoding='utf-8') as f:
+        queries = json.load(f) 
 
     # load the model
     model = Model(args.model, args.modelPath)
@@ -38,16 +37,16 @@ def main(args):
     results = []
 
     for query in tqdm(queries, desc="Processing queries"):
-        kwargs = {'max_new_tokens': args.max_new_tokens, 'temperature': args.temperature, 'top_p': args.top_p}
+        kwargs = {'max_new_tokens': args.max_new_tokens, 'temperature': args.temperature, 'top_p': args.top_p,
+                  'fps': args.fps, 'max_frames': args.max_frames, 'context_exist': args.context_exist}
         result = model.generate(query, os.path.join(args.dataDir, args.dataset), **kwargs)
         query['result'] = result
         results.append(query)
 
     # save results
     os.makedirs(args.outputDir, exist_ok=True)
-    with open(os.path.join(args.outputDir, f'{args.dataset}_{args.model}_results.jsonl'), 'w') as f:
-        for result in results:
-            f.write(json.dumps(result) + '\n')
+    with open(os.path.join(args.outputDir, f'{args.dataset}_{args.model}_results.json'), 'w', encoding='utf-8') as f:
+        json.dump(results, f, ensure_ascii=False, indent=2)
 
 if __name__ == "__main__":
     args = parse_args()
