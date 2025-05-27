@@ -73,9 +73,7 @@ def extract_question(query):
     for conv in query.get('conversations', []):
         if conv.get('from') == 'human':
             text = conv.get('value', '')
-            # 1) 태그를 모두 없애고
             clean = tag_pattern.sub('', text)
-            # 2) 양쪽 공백·개행 문자를 깔끔히 제거
             q = clean.strip()
             break
 
