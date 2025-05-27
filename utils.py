@@ -2,6 +2,7 @@ import av
 import numpy as np
 import base64
 import re
+import cv2
 
 def read_video_pyav(container, indices):
     '''
@@ -64,3 +65,49 @@ def generate_kwargs(**kwargs):
         for k, v in kwargs.items()
         if k in g_list and v is not None
     }
+
+tag_pattern = re.compile(r'<(?:video|image)>', re.IGNORECASE)
+
+def extract_question(query):
+    q = None
+    for conv in query.get('conversations', []):
+        if conv.get('from') == 'human':
+            text = conv.get('value', '')
+            clean = tag_pattern.sub('', text)
+            q = clean.strip()
+            break
+
+    if q is None:
+        raise ValueError("No valid question found in the query.")
+    return q
+
+def encode_file(path: str) -> str:
+    with open(path, "rb") as f:
+        data = f.read()
+    return base64.b64encode(data).decode()
+
+def extract_frames(video_path: str, max_frames: int = 8):
+    cap = cv2.VideoCapture(video_path)
+    total = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
+    if total <= 0:
+        cap.release()
+        return []
+    step = max(1, total // max_frames)
+    frames_b64 = []
+
+    for idx in range(0, total, step):
+        cap.set(cv2.CAP_PROP_POS_FRAMES, idx)
+        ret, frame = cap.read()
+        if not ret:
+            continue
+        ret, buf = cv2.imencode('.jpg', frame)
+        if not ret:
+            continue
+        b64 = base64.b64encode(buf.tobytes()).decode()
+        frames_b64.append(b64)
+        if len(frames_b64) >= max_frames:
+            break
+    cap.release()
+    return frames_b64
+
+

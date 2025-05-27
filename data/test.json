@@ -1,0 +1,32 @@
+[
+  {
+    "id": 0,
+    "image": "test1.jpg",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Describe the image."
+      },
+      {
+        "from": "gpt",
+        "value": "The brown dog is staring at you for some treat."
+      }
+    ],
+    "context": "This is an image."
+  },
+  {
+    "id": 1,
+    "video": "test1_360_640_24fps.mp4",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Describe the video."
+      },
+      {
+        "from": "gpt",
+        "value": "The material became amorphous."
+      }
+    ],
+    "context": "This is a video of a street."
+}
+]

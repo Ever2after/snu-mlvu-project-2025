@@ -6,10 +6,11 @@ python3 inference.py \
     --dataDir ./data \
     --outputDir ./output \
     --dataset test \
-    --model qwen2.5-vl-3b-sft \
-    --modelPath /mnt/data/jusang/mlvu/qwen_checkpoints \
-    --max_new_tokens 128 \
+    --model gpt-4o \
+    --modelPath None \
+    --context_exist True \
+    --max_new_tokens 1024 \
     --temperature 0.1 \
     --top_p 0.9 \
     --fps 30 \
-    --max_frames 8 \
+    --max_frames 24 \
