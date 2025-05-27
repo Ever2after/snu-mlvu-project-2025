@@ -5,12 +5,12 @@ export TOKENIZERS_PARALLELISM=false
 python3 inference.py \
     --dataDir ./data \
     --outputDir ./output \
-    --dataset test2 \
-    --model internvideo2_5_8b \
+    --dataset test \
+    --model gpt-4o \
     --modelPath None \
     --context_exist True \
-    --max_new_tokens 64 \
+    --max_new_tokens 1024 \
     --temperature 0.1 \
     --top_p 0.9 \
     --fps 30 \
-    --max_frames 8 \
+    --max_frames 24 \
