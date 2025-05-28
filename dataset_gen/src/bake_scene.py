@@ -5,7 +5,7 @@ import argparse
 import time
 
 # -----------------------------------
-# 1. Bake all fluid simulations
+# Bake all fluid simulations
 # -----------------------------------
 def bake_fluid_simulations():
     for obj in bpy.data.objects:
@@ -33,8 +33,3 @@ else:
     p_args = parser.parse_args('')
 
 bake_fluid_simulations()
-os.makedirs(bpy.path.abspath(f"//out/output_{p_args.idx}"), exist_ok=True)
-scene = bpy.context.scene
-scene.render.filepath = bpy.path.abspath(f"//out/output_{p_args.idx}/render.mp4")
-
-bpy.ops.render.render(animation=True)

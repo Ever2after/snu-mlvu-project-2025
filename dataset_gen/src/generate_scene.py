@@ -219,7 +219,7 @@ def output_fluid_domain(mesh_name, name, settings, indent=0):
     res += f"{i_str}" + chkvar(top, "_dst_settings.particle_band_width", settings.particle_band_width)
     res += f"{i_str}" + chkvar(top, "_dst_settings.cache_frame_start", settings.cache_frame_start)
     res += f"{i_str}" + chkvar(top, "_dst_settings.cache_frame_end", settings.cache_frame_end)
-    cache_path = cache_dir.replace('\\', '\\\\')
+    cache_path = os.path.join(cache_dir, mesh_name).replace('\\', '\\\\')
     res += f"{i_str}_dst_settings.cache_directory = '{cache_path}'\n\n"
     
     return res
@@ -459,8 +459,10 @@ def output_metadata(indent=0):
     res += f"{i_str}_scene.render.ffmpeg.ffmpeg_preset = '{scene.render.ffmpeg.ffmpeg_preset}'\n"
     res += f"{i_str}_scene.render.ffmpeg.video_bitrate = {scene.render.ffmpeg.video_bitrate}\n"
     res += f"{i_str}_scene.render.ffmpeg.gopsize = {scene.render.ffmpeg.gopsize}\n"
-    res += f"{i_str}_scene.frame_start = {scene.frame_start}\n"
-    res += f"{i_str}_scene.frame_end = {scene.frame_end}\n\n"
+    res += f"{i_str}" + chkvar("W@frame_start", "_frame_start", scene.frame_start)
+    res += f"{i_str}" + chkvar("W@frame_end", "_frame_end", scene.frame_end)
+    res += f"{i_str}_scene.frame_start = _frame_start\n"
+    res += f"{i_str}_scene.frame_end = _frame_end\n\n"
     
     world = bpy.context.scene.world
     res += f"{i_str}_world = bpy.context.scene.world\n"
@@ -553,9 +555,9 @@ def generate_code(out_dir, indent=0):
         value = default_values[param]
         param_type = type(value).__name__
         if param_type == 'tuple':
-            res += f"{i_str}parser.add_argument('--{param}', type=lambda x: tuple(map(float, x.split(','))) , default={print_var(value)})\n"
+            res += f"{i_str}parser.add_argument('--{param}', type=lambda x: tuple(map(float, x[1:].split(','))) , default={print_var(value)})\n"
         else:
-            res += f"{i_str}parser.add_argument('--{param}', type={param_type}, default={print_var(value)})\n"
+            res += f"{i_str}parser.add_argument('--{param}', type=lambda x: {param_type}(x[1:]), default={print_var(value)})\n"
     
     res += f"{i_str}args = sys.argv\n"
     res += f"{i_str}if '--' in args:\n"

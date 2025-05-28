@@ -6,6 +6,7 @@ dataset_gen
 |__src
      |__generate_scene.py
      |__main.py
-     |__bake_render_scene.py
+     |__bake_scene.py
+     |__render_scene.py
      |__sample.py
      |__README.txt
