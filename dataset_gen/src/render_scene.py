@@ -29,6 +29,9 @@ for obj in bpy.context.scene.objects:
 
 
 scene = bpy.context.scene
-scene.render.filepath = bpy.path.abspath(f"//render.mp4")
+if scene.render.ffmpeg.format == 'MKV':
+    scene.render.filepath = bpy.path.abspath(f"//render.mkv")
+if scene.render.ffmpeg.format == 'MP4':
+    scene.render.filepath = bpy.path.abspath(f"//render.mp4")
 
 bpy.ops.render.render(animation=True)

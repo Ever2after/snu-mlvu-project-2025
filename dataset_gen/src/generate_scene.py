@@ -17,6 +17,8 @@ def load_vars(conf_path):
             f.write("}\n\n\n")
             f.write("#######################################################################################\n")
             f.write("##### for variable sampling #####\n")
+            f.write("values = {\n")
+            f.write("}\n")
 
     module_name = "loaded_conf_module"
 
@@ -473,7 +475,8 @@ def output_metadata(indent=0):
     for node in world.node_tree.nodes:
         if node.type == 'TEX_ENVIRONMENT':
             # Texture data
-            texture_path = bpy.path.abspath(node.image.filepath)
+            texture_name = os.path.basename(node.image.filepath.replace('\\', '/'))
+            texture_path = bpy.path.abspath(f"//texture/{texture_name}")
             texture_path = texture_path.replace('\\', '\\\\')
             
             res += f"{i_str}_env_tex_node = _nodes.new(type='ShaderNodeTexEnvironment')\n"

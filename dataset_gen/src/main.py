@@ -42,7 +42,7 @@ GEN_SCRIPT = os.path.abspath("generate_scene.py")
 BAKE_SCRIPT = os.path.abspath("bake_scene.py")
 RENDER_SCRIPT = os.path.abspath("render_scene.py")
 
-mode = "all" # ["scene_gen_only", "bake", "render", "both"]
+mode = "scene_gen_only" # ["scene_gen_only", "bake", "render", "both"]
 # "scene_gen_only": generate scenes and do not bake/render
 # "bake": generate scenes, bake but not render
 # "render": render scene given .blend file and fluid cache
@@ -50,8 +50,14 @@ mode = "all" # ["scene_gen_only", "bake", "render", "both"]
 
 ##################
 
+with open(f"../scene/_ignore.txt") as f:
+    ignore_list = f.readlines()
+    for i in range(len(ignore_list)):
+        ignore_list[i] = ignore_list[i].replace("\n", "")
+
 for i in os.listdir("../scene"):
-    print(i)
+    if i == "_ignore.txt" or i in ignore_list: continue
+    print(f"Current scene: {i}\n\n")
 
     # attempt to create and run the generation script
     script_path = f"../scene/{i}/out.py"
