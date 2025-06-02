@@ -2,6 +2,13 @@ output
 __pycache__
 wandb
 fluid_cache
-out
+output
 meshes
 texture
+fluid_cache
+out_summary.txt
+out.py
+scene_aug.blend
+scene_aug.blend1
+scene_delta.blend
+scene_delta.blend1

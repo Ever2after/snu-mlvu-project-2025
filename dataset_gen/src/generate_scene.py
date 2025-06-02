@@ -67,6 +67,8 @@ def chkvar(top_abbr, var, value):
     if var_path in what_to_change.keys():
         res = f"{var} = {what_to_change[var_path]}\n"
         default_values[what_to_change[var_path]] = value
+        if var_path in what_to_change_used:
+            what_to_change_used.remove(var_path)
     else:
         value_str = print_var(value)
         res = f"{var} = {value_str}\n"
@@ -189,9 +191,11 @@ def output_mesh_mat(mats, indent=0):
 
         if bsdf:
             res += output_mat_bsdf(mat_name, bsdf, indent)
+            summary_dict["Material"][mat_name] = "BSDF"
         
         if vol_abs:
             res += output_mat_vol_abs(mat_name, vol_abs, indent)
+            summary_dict["Material"][mat_name] = "VOL_ABS"
 
         res += f"{i_str}\n"
         res += f"{i_str}_imported_obj.data.materials.append(bpy.data.materials['{mat_name}'])\n\n"
@@ -340,6 +344,68 @@ def output_rigid_body(mesh, indent=0):
     return res
 
 
+def gather_animation(mesh):
+    '''
+    output struct: 
+    {<frame #> : {"location": (,,), "rotation_euler": (,,), "scale": (,,)}, 
+      ...
+    }
+    '''
+    res = {}
+
+    action = mesh.animation_data.action
+    for fcurve in action.fcurves:
+        if fcurve.data_path not in ["location", "rotation_euler", "scale"]:
+            continue 
+
+        for keyframe in fcurve.keyframe_points:
+            # check if new frame should be added
+            frame_num = int(keyframe.co.x)
+            if frame_num not in res:
+                res[frame_num] = {"location": [None, None, None], 
+                                  "rotation_euler": [None, None, None], 
+                                  "scale": [None, None, None], }
+            
+            # add current data
+            res[frame_num][fcurve.data_path][fcurve.array_index] = keyframe.co.y
+    
+    # check for missing data(aka None)
+    for frame_num in res:
+        for Attr_name in res[frame_num]:
+            Attr = res[frame_num][Attr_name]
+            if None in Attr:
+                # missing data; go to that frame and fill in the gap
+                bpy.context.scene.frame_set(frame_num)
+                if Attr_name == "location":
+                    value = mesh.matrix_world.to_translation()
+                elif Attr_name == "rotation_euler":
+                    value = mesh.matrix_world.to_euler()
+                elif Attr_name == "scale":
+                    value = mesh.matrix_world.to_scale()
+                res[frame_num][Attr_name] = list(value)
+    
+    return res
+
+def output_animation(mesh, indent=0):
+    res = ""
+    i_str = "    " * indent
+
+    keyframe_data = gather_animation(mesh)
+
+    for f_num in keyframe_data:
+        top = f"{mesh.name}.keyframe_{f_num}"
+        res += f"{i_str}bpy.context.scene.frame_set({f_num})\n"
+        res += f"{i_str}" + chkvar(top, "_imported_obj.location", tuple(keyframe_data[f_num]['location']))
+        res += f"{i_str}" + chkvar(top, "_imported_obj.rotation_euler", tuple(keyframe_data[f_num]['rotation_euler']))
+        res += f"{i_str}" + chkvar(top, "_imported_obj.scale", tuple(keyframe_data[f_num]['scale']))
+        res += f"{i_str}_imported_obj.keyframe_insert(data_path='location', frame={f_num})\n"
+        res += f"{i_str}_imported_obj.keyframe_insert(data_path='rotation_euler', frame={f_num})\n"
+        res += f"{i_str}_imported_obj.keyframe_insert(data_path='scale', frame={f_num})\n\n"
+        
+        summary_dict["Mesh"][mesh.name]["Keyframe"].append(f_num)
+    
+    return res
+
 def output_mesh(mesh, indent=0):
     res = ""
     i_str = "    " * indent
@@ -377,17 +443,26 @@ def output_mesh(mesh, indent=0):
             if mod.domain_settings:
                 res += f"{i_str}# domain settings\n"
                 res += output_fluid_domain(mesh.name, mod_key, mod.domain_settings, indent)
+                summary_dict["Mesh"][mesh.name]["Fluid"] = "DOMAIN"
             if mod.flow_settings:
                 res += f"{i_str}# flow settings\n"
                 res += output_fluid_flow(mesh.name, mod_key, mod.flow_settings, indent)
+                summary_dict["Mesh"][mesh.name]["Fluid"] = "FLOW"
             if mod.effector_settings:
                 res += f"{i_str}# effector settings\n"
                 res += output_fluid_effector(mesh.name, mod_key, mod.effector_settings, indent)
+                summary_dict["Mesh"][mesh.name]["Fluid"] = "EFFECTOR"
     
     # if rigid body data exists, output that as well
     if mesh.rigid_body:
         res += f"{i_str}# rigid body settings\n"
         res += output_rigid_body(mesh, indent)
+        summary_dict["Mesh"][mesh.name]["Rigid"] = mesh.rigid_body.type
+    
+    # if animation data exists, output that as well
+    if mesh.animation_data and mesh.animation_data.action:
+        res += f"{i_str}# animation keyframes\n"
+        res += output_animation(mesh, indent)
     
     return res
 
@@ -448,7 +523,8 @@ def output_metadata(indent=0):
     res = ""
     i_str = "    " * indent
     res += f"{i_str}bpy.context.scene.render.engine = '{bpy.context.scene.render.engine}'\n"
-    res += f"{i_str}bpy.context.scene.cycles.samples = {bpy.context.scene.cycles.samples}\n"
+    res += f"{i_str}" + chkvar("W@cycles_samples", "_cycles_sample", bpy.context.scene.cycles.samples)
+    res += f"{i_str}bpy.context.scene.cycles.samples = _cycles_sample\n"
     res += f"{i_str}bpy.context.scene.cycles.device = '{bpy.context.scene.cycles.device}'\n"
     res += f"{i_str}bpy.context.scene.cycles.denoising_use_gpu = True\n\n"
 
@@ -525,10 +601,13 @@ def generate_code(out_dir, indent=0):
     for obj in bpy.context.scene.objects:
         if obj.type == "MESH":
             meshes.append(obj)
+            summary_dict["Mesh"][obj.name] = {"Fluid": None, "Rigid": None, "Keyframe": []}
         if obj.type == "LIGHT":
             lights.append(obj)
+            summary_dict["Light"][obj.name] = obj.data.type
         if obj.type == "CAMERA":
             cameras.append(obj)
+            summary_dict["Camera"][obj.name] = None
          
     # 1. meshes
     res += f"{i_str}# 1. meshes\n"
@@ -599,12 +678,53 @@ mesh_dir = os.path.join(p_args.out_dir, "meshes")
 os.makedirs(mesh_dir, exist_ok=True)
 cache_dir = os.path.join(p_args.out_dir, "fluid_cache")
 os.makedirs(cache_dir, exist_ok=True)
+
 what_to_change = load_vars(os.path.join(p_args.out_dir, "sampleconf.py"))
+what_to_change_used = list(what_to_change.keys()) #  variable has not been consumed
+summary_dict = {"Mesh": {}, "Light": {}, "Camera": {}, "Material": {}} # Dict for saving data to print summary info
 
 depsgraph = bpy.context.evaluated_depsgraph_get()
 
 code = generate_code(p_args.out_dir, indent)
+
+# if unmatched variables exist, print a warning
+if len(what_to_change_used) != 0:
+    print("\033[93m" + "WARNING: unused variable: ")
+    for i in what_to_change_used:
+          print(f"\t{i}")
+    print("\033[0m", end="")
+
+# write code
 with open(os.path.join(p_args.out_dir, "out.py"), 'w') as f:
     f.write(code)
+    f.close()
+
+# write summary
+with open(os.path.join(p_args.out_dir, "out_summary.txt"), 'w') as f:
+    f.write("MESH\n")
+    for mesh in summary_dict["Mesh"]:
+        f.write(f"\t{mesh}\n")
+        if summary_dict["Mesh"][mesh]["Fluid"]:
+            f.write(f"\t\tFluid: {summary_dict['Mesh'][mesh]['Fluid']}\n")
+        if summary_dict["Mesh"][mesh]["Rigid"]:
+            f.write(f"\t\tRigid: {summary_dict['Mesh'][mesh]['Rigid']}\n")
+        if summary_dict["Mesh"][mesh]["Keyframe"]:
+            f.write(f"\t\tKeyframes: ")
+            for kf in summary_dict['Mesh'][mesh]['Keyframe']:
+                f.write(f"{kf}, ")
+            f.write("\n")
+        f.write("\n")
+    f.write("MATERIAL\n")
+    for mat in summary_dict["Material"]:
+        f.write(f"\t{mat}: {summary_dict['Material'][mat]}\n")
+    f.write("\n")
+    f.write("LIGHT\n")
+    for light in summary_dict["Light"]:
+        f.write(f"\t{light}: {summary_dict['Light'][light]}\n")
+    f.write("\n")
+    f.write("CAMERA\n")
+    for camera in summary_dict["Camera"]:
+        f.write(f"\t{camera}\n")
+    f.write("\n")
     f.close()
 print("done!")
