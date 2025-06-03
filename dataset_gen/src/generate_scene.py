@@ -31,6 +31,36 @@ def load_vars(conf_path):
     return what_to_change
 
 
+def write_summery():
+    with open(os.path.join(out_dir, "out_summary.txt"), 'w') as f:
+        f.write("MESH\n")
+        for mesh in summary_dict["Mesh"]:
+            f.write(f"\t{mesh}\n")
+            if summary_dict["Mesh"][mesh]["Fluid"]:
+                f.write(f"\t\tFluid: {summary_dict['Mesh'][mesh]['Fluid']}\n")
+            if summary_dict["Mesh"][mesh]["Rigid"]:
+                f.write(f"\t\tRigid: {summary_dict['Mesh'][mesh]['Rigid']}\n")
+            if summary_dict["Mesh"][mesh]["Keyframe"]:
+                f.write(f"\t\tKeyframes: ")
+                for kf in summary_dict['Mesh'][mesh]['Keyframe']:
+                    f.write(f"{kf}, ")
+                f.write("\n")
+            f.write("\n")
+        f.write("MATERIAL\n")
+        for mat in summary_dict["Material"]:
+            f.write(f"\t{mat}: {summary_dict['Material'][mat]}\n")
+        f.write("\n")
+        f.write("LIGHT\n")
+        for light in summary_dict["Light"]:
+            f.write(f"\t{light}: {summary_dict['Light'][light]}\n")
+        f.write("\n")
+        f.write("CAMERA\n")
+        for camera in summary_dict["Camera"]:
+            f.write(f"\t{camera}\n")
+        f.write("\n")
+        f.close()
+
+
 def print_var(object):
     if isinstance(object, tuple):
         tuple_str = "("
@@ -225,6 +255,7 @@ def output_fluid_domain(mesh_name, name, settings, indent=0):
     res += f"{i_str}" + chkvar(top, "_dst_settings.particle_band_width", settings.particle_band_width)
     res += f"{i_str}" + chkvar(top, "_dst_settings.cache_frame_start", settings.cache_frame_start)
     res += f"{i_str}" + chkvar(top, "_dst_settings.cache_frame_end", settings.cache_frame_end)
+    res += f"{i_str}_dst_settings.cache_frame_end = round(_dst_settings.cache_frame_end * _fps_scale)\n"
     cache_path = os.path.join(cache_dir, mesh_name).replace('\\', '\\\\')
     res += f"{i_str}_dst_settings.cache_directory = '{cache_path}'\n\n"
     
@@ -311,6 +342,7 @@ def output_rigid_body(mesh, indent=0):
                             starts_moving = round(keyframe.co.x)
                     break
         res += f"{i_str}" + chkvar(f"{mesh.name}.rigid_body.start_move", "_start_move", starts_moving)
+        res += f"{i_str}_start_move = round(_start_move * _fps_scale)\n"
         
         # get initial position & velocity
         init_v_lin, init_v_ang = get_initstate_rigid_body(mesh, starts_moving)
@@ -394,13 +426,14 @@ def output_animation(mesh, indent=0):
 
     for f_num in keyframe_data:
         top = f"{mesh.name}.keyframe_{f_num}"
-        res += f"{i_str}bpy.context.scene.frame_set({f_num})\n"
+        res += f"{i_str}_kf_new_scene = round({f_num} * _fps_scale)\n"
+        res += f"{i_str}bpy.context.scene.frame_set(_kf_new_scene)\n"
         res += f"{i_str}" + chkvar(top, "_imported_obj.location", tuple(keyframe_data[f_num]['location']))
         res += f"{i_str}" + chkvar(top, "_imported_obj.rotation_euler", tuple(keyframe_data[f_num]['rotation_euler']))
         res += f"{i_str}" + chkvar(top, "_imported_obj.scale", tuple(keyframe_data[f_num]['scale']))
-        res += f"{i_str}_imported_obj.keyframe_insert(data_path='location', frame={f_num})\n"
-        res += f"{i_str}_imported_obj.keyframe_insert(data_path='rotation_euler', frame={f_num})\n"
-        res += f"{i_str}_imported_obj.keyframe_insert(data_path='scale', frame={f_num})\n\n"
+        res += f"{i_str}_imported_obj.keyframe_insert(data_path='location', frame=_kf_new_scene)\n"
+        res += f"{i_str}_imported_obj.keyframe_insert(data_path='rotation_euler', frame=_kf_new_scene)\n"
+        res += f"{i_str}_imported_obj.keyframe_insert(data_path='scale', frame=_kf_new_scene)\n\n"
         
         summary_dict["Mesh"][mesh.name]["Keyframe"].append(f_num)
     
@@ -539,8 +572,10 @@ def output_metadata(indent=0):
     res += f"{i_str}_scene.render.ffmpeg.gopsize = {scene.render.ffmpeg.gopsize}\n"
     res += f"{i_str}" + chkvar("W@frame_start", "_frame_start", scene.frame_start)
     res += f"{i_str}" + chkvar("W@frame_end", "_frame_end", scene.frame_end)
+    res += f"{i_str}" + chkvar("W@frame_step", "_frame_step", scene.frame_step)
     res += f"{i_str}_scene.frame_start = _frame_start\n"
-    res += f"{i_str}_scene.frame_end = _frame_end\n\n"
+    res += f"{i_str}_scene.frame_end = round(_frame_end * _fps_scale)\n"
+    res += f"{i_str}_scene.frame_step = _frame_step\n\n"
     
     world = bpy.context.scene.world
     res += f"{i_str}_world = bpy.context.scene.world\n"
@@ -592,6 +627,7 @@ def generate_code(out_dir, indent=0):
 
     # set the fps early as rigid body depends on it
     res += f"{i_str}" + chkvar("W@fps", "_fps", bpy.context.scene.render.fps)
+    res += f"{i_str}_fps_scale = _fps / {bpy.context.scene.render.fps}\n" # required in case fps changes during scene gen
     res += f"{i_str}bpy.context.scene.render.fps = _fps\n\n"
 
     # categorize data
@@ -664,7 +700,8 @@ def generate_code(out_dir, indent=0):
 #### main ####
 # assume the scene is already loaded
 parser = argparse.ArgumentParser()
-parser.add_argument('--out_dir', type=str)
+parser.add_argument('--out_script_path', type=str)
+parser.add_argument('--skip_summary', action="store_true")
 args = sys.argv
 if '--' in args:
     args = args[args.index('--') + 1:]
@@ -673,19 +710,20 @@ else:
     p_args = parser.parse_args()
 
 
-indent = 0; default_values = {}
-mesh_dir = os.path.join(p_args.out_dir, "meshes")
+indent = 0; default_values = {}; out_dir = os.path.dirname(p_args.out_script_path)
+
+mesh_dir = os.path.join(out_dir, "meshes")
 os.makedirs(mesh_dir, exist_ok=True)
-cache_dir = os.path.join(p_args.out_dir, "fluid_cache")
+cache_dir = os.path.join(out_dir, "fluid_cache")
 os.makedirs(cache_dir, exist_ok=True)
 
-what_to_change = load_vars(os.path.join(p_args.out_dir, "sampleconf.py"))
+what_to_change = load_vars(os.path.join(out_dir, "sampleconf.py"))
 what_to_change_used = list(what_to_change.keys()) #  variable has not been consumed
 summary_dict = {"Mesh": {}, "Light": {}, "Camera": {}, "Material": {}} # Dict for saving data to print summary info
 
 depsgraph = bpy.context.evaluated_depsgraph_get()
 
-code = generate_code(p_args.out_dir, indent)
+code = generate_code(out_dir, indent)
 
 # if unmatched variables exist, print a warning
 if len(what_to_change_used) != 0:
@@ -695,36 +733,11 @@ if len(what_to_change_used) != 0:
     print("\033[0m", end="")
 
 # write code
-with open(os.path.join(p_args.out_dir, "out.py"), 'w') as f:
+with open(p_args.out_script_path, 'w') as f:
     f.write(code)
     f.close()
 
 # write summary
-with open(os.path.join(p_args.out_dir, "out_summary.txt"), 'w') as f:
-    f.write("MESH\n")
-    for mesh in summary_dict["Mesh"]:
-        f.write(f"\t{mesh}\n")
-        if summary_dict["Mesh"][mesh]["Fluid"]:
-            f.write(f"\t\tFluid: {summary_dict['Mesh'][mesh]['Fluid']}\n")
-        if summary_dict["Mesh"][mesh]["Rigid"]:
-            f.write(f"\t\tRigid: {summary_dict['Mesh'][mesh]['Rigid']}\n")
-        if summary_dict["Mesh"][mesh]["Keyframe"]:
-            f.write(f"\t\tKeyframes: ")
-            for kf in summary_dict['Mesh'][mesh]['Keyframe']:
-                f.write(f"{kf}, ")
-            f.write("\n")
-        f.write("\n")
-    f.write("MATERIAL\n")
-    for mat in summary_dict["Material"]:
-        f.write(f"\t{mat}: {summary_dict['Material'][mat]}\n")
-    f.write("\n")
-    f.write("LIGHT\n")
-    for light in summary_dict["Light"]:
-        f.write(f"\t{light}: {summary_dict['Light'][light]}\n")
-    f.write("\n")
-    f.write("CAMERA\n")
-    for camera in summary_dict["Camera"]:
-        f.write(f"\t{camera}\n")
-    f.write("\n")
-    f.close()
+if not p_args.skip_summary:
+    write_summery()
 print("done!")

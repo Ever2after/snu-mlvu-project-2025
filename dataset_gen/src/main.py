@@ -71,7 +71,7 @@ for i in os.listdir("../scene"):
         "--background", os.path.abspath(f"../scene/{i}/scene.blend"), 
         "--python", "generate_scene.py", 
         "--", 
-        "--out_dir", os.path.abspath(f"../scene/{i}"), 
+        "--out_script_path", os.path.abspath(f"../scene/{i}/out.py"), 
     ], check=True)
 
     # 1. sample the parameters

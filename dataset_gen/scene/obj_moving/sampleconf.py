@@ -1,6 +1,8 @@
 #######################################################################################
 ##### for scene generation #####
 what_to_change = {
+    "W@fps": "fps",
+    "W@frame_step": "f_step",
     "Cube.002.location": "loc",
     "Cylinder.keyframe_1.location": "loc1",
     "Cylinder.keyframe_75.location": "loc2",
@@ -12,6 +14,14 @@ what_to_change = {
 #######################################################################################
 ##### for variable sampling #####
 values = {
+    ("fps",) : [
+        (None,),
+    ],
+    ("f_step",) : [
+        (None,),
+        (2,),
+        (5,),
+    ],
     ("loc",) : [
         (None,),
     ],

@@ -34,4 +34,5 @@ if scene.render.ffmpeg.format == 'MKV':
 if scene.render.ffmpeg.format == 'MP4':
     scene.render.filepath = bpy.path.abspath(f"//render.mp4")
 
+bpy.context.scene.render.fps = round(bpy.context.scene.render.fps / bpy.context.scene.frame_step)
 bpy.ops.render.render(animation=True)
