@@ -248,6 +248,7 @@ def output_fluid_domain(mesh_name, name, settings, indent=0):
     res += f"{i_str}" + chkvar(top, "_dst_settings.domain_type", settings.domain_type)
     res += f"{i_str}_dst_settings.cache_type = 'MODULAR'\n"
     res += f"{i_str}_dst_settings.cache_mesh_format = 'OBJECT'\n"
+    res += f"{i_str}_dst_settings.cache_resumable = True\n"
     res += f"{i_str}" + chkvar(top, "_dst_settings.resolution_max", settings.resolution_max)
     res += f"{i_str}" + chkvar(top, "_dst_settings.use_mesh", settings.use_mesh)
     res += f"{i_str}" + chkvar(top, "_dst_settings.cfl_condition", settings.cfl_condition)
@@ -258,6 +259,21 @@ def output_fluid_domain(mesh_name, name, settings, indent=0):
     res += f"{i_str}_dst_settings.cache_frame_end = round(_dst_settings.cache_frame_end * _fps_scale)\n"
     cache_path = os.path.join(cache_dir, mesh_name).replace('\\', '\\\\')
     res += f"{i_str}_dst_settings.cache_directory = '{cache_path}'\n\n"
+
+    # viscosity
+    # if viscosity is invariable, use scene settings
+    top = f"{mesh_name}.DOMAIN.viscosity_value"
+    if top not in what_to_change:
+        if settings.use_viscosity:
+            res += f"{i_str}_dst_settings.use_viscosity = True\n"
+            res += f"{i_str}_dst_settings.viscosity_value = {settings.viscosity_value}\n\n"
+    else:
+        res += f"{i_str}" + chkvar(top, "_viscosity_given", settings.viscosity_value if settings.use_viscosity else -1.0)
+        res += f"{i_str}if _viscosity_given > -1.0:\n"
+        i_str = "    " * (indent + 1)
+        res += f"{i_str}_dst_settings.use_viscosity = True\n"
+        res += f"{i_str}_dst_settings.viscosity_value = max(_viscosity_given, 0.0)\n\n"
+        i_str = "    " * indent
     
     return res
 

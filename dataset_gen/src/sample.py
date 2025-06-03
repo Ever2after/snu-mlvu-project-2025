@@ -107,5 +107,5 @@ class GridSample_joint:
                 sample_res[var] = var_set_sample[i]
 
             idx //= length
-
+        
         return sample_res

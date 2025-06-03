@@ -23,7 +23,7 @@ def gen_scene(script_path, sample):
         "--", 
     ]
     for var_name in sample:
-        if sample[var_name]:
+        if sample[var_name] is not None:
             subproc_args.extend([f"--{var_name}", process_value(sample[var_name])])
     
     subprocess.run(subproc_args, check=True)
@@ -43,7 +43,7 @@ GEN_SCRIPT = os.path.abspath("generate_scene.py")
 BAKE_SCRIPT = os.path.abspath("bake_scene.py")
 RENDER_SCRIPT = os.path.abspath("render_scene.py")
 
-mode = "all" # ["scene_gen_only", "bake", "render", "both"]
+mode = "scene_gen_only" # ["scene_gen_only", "bake", "render", "both"]
 # "scene_gen_only": generate scenes and do not bake/render
 # "bake": generate scenes, bake but not render
 # "render": render scene given .blend file and fluid cache
