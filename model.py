@@ -372,14 +372,14 @@ class Model:
 
         elif 'gpt' in self.model_name:
             from utils import encode_image, encode_file, extract_frames
-            input = [ {"role": "system", "content": "You are analyzing video frames. The user will upload sequential frames from a video."},
+            input = [ {"role": "system", "content": "You are analyzing video frames sampled at regular intervals. The user will upload these frames in chronological order, but the frame numbers may not be consecutive."},
                 {'role': 'user', 'content': []}]
             for image_path in query.get('image', []):
                 input[1]['content'].append({
                     "type": "input_image",
                     "image_url": f"data:image/jpeg;base64,{encode_file(os.path.join(data_path, image_path))}"
                 })
-            max_frames = kwargs.get("max_frames", 5)
+            max_frames = kwargs.get("max_frames", 8)
             for video_path in query.get('video', []):
                 abs_path = os.path.join(data_path, video_path)
                 for frame_b64 in extract_frames(abs_path, max_frames=max_frames):
@@ -405,9 +405,7 @@ class Model:
             )
             return response.output_text
         elif 'gemini' in self.model_name:
-
-
-            from utils import encode_image, encode_file
+            from utils import encode_image, extract_frames
             import requests
             GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
 
@@ -419,8 +417,24 @@ class Model:
             if MODEL_ID == 'gemini-2.0-pro':
                 MODEL_ID = 'gemini-2.0-pro-exp-02-05'
 
-            url = f"https://generativelanguage.googleapis.com/v1beta/models/{MODEL_ID}:generateContent?key={GEMINI_API_KEY}"
-            parts = []
+            url = (
+                f"https://generativelanguage.googleapis.com/v1beta/"
+                f"models/{MODEL_ID}:generateContent?key={GEMINI_API_KEY}"
+            )
+
+            parts = [
+                {
+                    "text": (
+                        "You are analyzing video frames sampled at regular intervals. "
+                        "Below I will send you frames in chronological order; "
+                        "please note that their frame numbers are not consecutive."
+                    )
+                },
+                {
+                    "text": q
+                }
+            ]
+
             for image_path in query.get('image', []):
                 img_b64 = encode_image(os.path.abspath(os.path.join(data_path, image_path)))
                 parts.append({
@@ -429,17 +443,18 @@ class Model:
                         "data": img_b64
                     }
                 })
+
+            max_frames = kwargs.get("max_frames", 8)
             for video_path in query.get('video', []):
-                vid_b64 = encode_file(os.path.abspath(os.path.join(data_path, video_path)))
-                parts.append({
-                    "inline_data": {
-                        "mime_type": "video/mp4",
-                        "data": vid_b64
-                    }
-                })
-            if kwargs.get("context_exist", False) and 'context' in query.keys():
-                q = query['context'] + "\n" + q   
-            parts.append({"text": q})
+                abs_path = os.path.join(data_path, video_path)
+                for frame_b64 in extract_frames(abs_path, max_frames=max_frames):
+                    parts.append({
+                        "inline_data": {
+                            "mime_type": "image/jpeg",
+                            "data": frame_b64
+                        }
+                    })
+
             contents = [{
                 "role": "user",
                 "parts": parts
@@ -488,39 +503,3 @@ if __name__ == "__main__":
     output2 = model.generate(query2, data_path, max_new_tokens=512, temperature=0.1)
     print("Time taken for video query:", time.time() - start)
     print("Output for video query:", output2)
-'''
-        elif 'gemini' in self.model_name:
-            from utils import encode_image
-            import requests
-            GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
-
-            MODEL_ID = self.model_name
-            if MODEL_ID == 'gemini-2.5-flash':
-                MODEL_ID = 'gemini-2.5-flash-preview-04-17'
-            if MODEL_ID == 'gemini-2.5-pro':
-                MODEL_ID = 'gemini-2.5-pro-preview-03-25'
-
-            url = f"https://generativelanguage.googleapis.com/v1beta/models/{MODEL_ID}:generateContent?key={GEMINI_API_KEY}"
-            contents = [{"parts":[
-                {
-                    "inline_data": {
-                        "mime_type":"image/jpeg",
-                        "data": encode_image(os.path.abspath(os.path.join(data_path, image_path)))
-                    }
-                } for image_path in query['images']
-            ] + [{
-                    "text": query['text']
-                }
-            ]}]
-            generationConfig = {
-                "maxOutputTokens": kwargs.get("max_new_tokens", 512),
-                "temperature": kwargs.get("temperature", 0.1),
-                "topP": kwargs.get("top_p", 0.9),
-            }
-            response = requests.post(url, json={ "contents": contents, "generationConfig": generationConfig })
-            if response.status_code == 200:
-                return response.json()['candidates'][0]['content']['parts'][0]['text']
-            else:
-                print("Error:", response.status_code, response.text)
-                return None
-                '''
