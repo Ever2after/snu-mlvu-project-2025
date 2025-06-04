@@ -253,6 +253,8 @@ def output_fluid_domain(mesh_name, name, settings, indent=0):
     res += f"{i_str}" + chkvar(top, "_dst_settings.use_mesh", settings.use_mesh)
     res += f"{i_str}" + chkvar(top, "_dst_settings.cfl_condition", settings.cfl_condition)
     res += f"{i_str}" + chkvar(top, "_dst_settings.particle_radius", settings.particle_radius)
+    res += f"{i_str}" + chkvar(top, "_dst_settings.particle_number", settings.particle_number)
+    res += f"{i_str}" + chkvar(top, "_dst_settings.particle_randomness", settings.particle_randomness)
     res += f"{i_str}" + chkvar(top, "_dst_settings.particle_band_width", settings.particle_band_width)
     res += f"{i_str}" + chkvar(top, "_dst_settings.cache_frame_start", settings.cache_frame_start)
     res += f"{i_str}" + chkvar(top, "_dst_settings.cache_frame_end", settings.cache_frame_end)
@@ -291,7 +293,9 @@ def output_fluid_flow(mesh_name, name, settings, indent=0):
     top = f"{mesh_name}.FLOW"
     res += f"{i_str}" + chkvar(top, "_dst_settings.flow_type", settings.flow_type)
     res += f"{i_str}" + chkvar(top, "_dst_settings.flow_behavior", settings.flow_behavior)
-    res += f"{i_str}" + chkvar(top, "_dst_settings.flow_source", settings.flow_source) + "\n"
+    res += f"{i_str}" + chkvar(top, "_dst_settings.flow_source", settings.flow_source)
+    res += f"{i_str}_dst_settings.use_initial_velocity = True\n"
+    res += f"{i_str}" + chkvar(top, "_dst_settings.velocity_coord", tuple(settings.velocity_coord)) + "\n"
     
     return res
 

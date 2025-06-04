@@ -3,13 +3,18 @@
 what_to_change = {
     "domain.DOMAIN.resolution_max": "flow_res", 
     "domain.DOMAIN.viscosity_value": "viscosity", 
+    "domain.DOMAIN.particle_radius": "part_rad", 
+    "domain.DOMAIN.particle_number": "part_num", 
+    "domain.DOMAIN.particle_randomness": "part_random", 
     "Icosphere.scale": "flow_size", 
     "Icosphere.location": "flow_loc", 
+    "Icosphere.FLOW.velocity_coord": "flow_init_v", 
     "Camera.location": "cam_loc", 
     "Camera.rotation_euler": "cam_rot", 
     "Sun.rotation_euler" : "light_angle", 
     "M@Sink.base_color" : "color", 
-    "M@Sink.Metallic" : "sink_metal"
+    "M@Sink.Metallic" : "sink_metal", 
+    "W@cycles_samples" : "samples"
 }
 
 
@@ -23,12 +28,22 @@ values = {
         ((5.70, -2.83, 8.81), (0.72, 0, 1.13),), 
         ((3.86, 3.28, 1.63), (1.40, 0, 2.3),), 
     ],
-    ("viscosity",) : [
-        (-1.0,), # no viscosity
-        (0.0,), 
-        (0.02,), 
-        (0.05,), 
-        (0.1,), 
+    ("viscosity", "part_rad", "part_num", "part_random", ) : [
+        (-1.0, 0.8, 2, 0.1,), # no viscosity
+        (0.0, 1.2, 4, 1.0,), 
+        (0.02, 1.2, 4, 1.0,), 
+        (0.05, 1.2, 4, 1.0,), 
+        (0.1, 1.2, 4, 1.0,), 
+    ],
+    ("flow_init_v",) : [
+        ((0, 0, -0.2),), 
+    ],
+    ("viscosity", "part_rad", "part_num", "part_random", ) : [
+        (-1.0, 0.8, 2, 0.1,), # no viscosity
+        (0.0, 1.2, 4, 1.0,), 
+        (0.02, 1.2, 4, 1.0,), 
+        (0.05, 1.2, 4, 1.0,), 
+        (0.1, 1.2, 4, 1.0,), 
     ],
     ("flow_size", "flow_res", ) : [
         ((1, 1, 1), 90),
@@ -50,5 +65,8 @@ values = {
     ("sink_metal", ) : [
         (0,), 
         (0.8,), 
+    ],
+    ("samples", ) : [
+        (16,), 
     ],
 }
