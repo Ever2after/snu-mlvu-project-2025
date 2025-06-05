@@ -6,6 +6,8 @@ import argparse
 import importlib.util
 from mathutils import Vector
 from contextlib import redirect_stdout
+import platform
+
 os.chdir(os.path.dirname(os.path.abspath(sys.argv[0])))
 
 def load_vars(conf_path):
@@ -132,7 +134,10 @@ def save_geometry(mesh):
     # Step 4: Export the mesh
     stdout = io.StringIO()
     with redirect_stdout(stdout):
-        mesh_path = os.path.join(mesh_dir, f"{mesh_name}.obj").replace("/", "\\")
+        if platform.system() == 'Windows':
+            mesh_path = os.path.join(mesh_dir, f"{mesh_name}.obj").replace("/", "\\")
+        else:
+            mesh_path = os.path.join(mesh_dir, f"{mesh_name}.obj")
         bpy.ops.wm.obj_export(
             filepath=mesh_path,
             export_selected_objects=False,
@@ -154,6 +159,11 @@ def output_mat_bsdf(mat_name, bsdf, indent=0):
     i_str = "    " * indent
 
     res += f"{i_str}_bsdf = _nodes.get('Principled BSDF')\n"
+    
+    res += f"{i_str}if _bsdf is None:\n"
+    res += f"{i_str}    _bsdf = _nodes.new(type='ShaderNodeBsdfPrincipled')\n"
+    res += f"{i_str}    _output = _nodes.get('Material Output') or _nodes.new(type='ShaderNodeOutputMaterial')\n"
+    res += f"{i_str}    _mat.node_tree.links.new(_bsdf.outputs['BSDF'], _output.inputs['Surface'])\n"
 
     # Albedo
     base_color = bsdf.inputs['Base Color'].default_value
@@ -259,7 +269,10 @@ def output_fluid_domain(mesh_name, name, settings, indent=0):
     res += f"{i_str}" + chkvar(top, "_dst_settings.cache_frame_start", settings.cache_frame_start)
     res += f"{i_str}" + chkvar(top, "_dst_settings.cache_frame_end", settings.cache_frame_end)
     res += f"{i_str}_dst_settings.cache_frame_end = round(_dst_settings.cache_frame_end * _fps_scale)\n"
-    cache_path = os.path.join(cache_dir, mesh_name).replace('\\', '\\\\')
+    if platform.system() == 'Windows':
+        cache_path = os.path.join(cache_dir, mesh_name).replace('\\', '\\\\')
+    else:
+        cache_path = os.path.join(cache_dir, mesh_name)
     res += f"{i_str}_dst_settings.cache_directory = '{cache_path}'\n\n"
 
     # viscosity
@@ -469,7 +482,10 @@ def output_mesh(mesh, indent=0):
     # Write code to import the saved geometry in the generated .py file
     res += f"{i_str}###################\n"
     res += f"{i_str}# Mesh: {mesh.name}\n"
-    res += f"{i_str}bpy.ops.wm.obj_import(filepath=os.path.join(_base_path, '{mesh.name}.obj').replace('/', '\\\\'))\n"
+    if platform.system() == 'Windows':
+        res += f"{i_str}bpy.ops.wm.obj_import(filepath=os.path.join(_base_path, '{mesh.name}.obj').replace('/', '\\\\'))\n"
+    else:
+        res += f"{i_str}bpy.ops.wm.obj_import(filepath=os.path.join(_base_path, '{mesh.name}.obj'))\n"
 
     # After import, apply transform (location/rotation/scale)
     res += f"{i_str}_imported_obj = bpy.context.selected_objects[0]\n"
@@ -608,8 +624,9 @@ def output_metadata(indent=0):
             # Texture data
             texture_name = os.path.basename(node.image.filepath.replace('\\', '/'))
             texture_path = bpy.path.abspath(f"//texture/{texture_name}")
-            texture_path = texture_path.replace('\\', '\\\\')
-            
+            if platform.system() == 'Windows':
+                texture_path = texture_path.replace('\\', '\\\\')
+
             res += f"{i_str}_env_tex_node = _nodes.new(type='ShaderNodeTexEnvironment')\n"
             res += f"{i_str}_bg_node = _nodes.new(type='ShaderNodeBackground')\n"
             res += f"{i_str}_output_node = _nodes.new(type='ShaderNodeOutputWorld')\n\n"
@@ -620,7 +637,10 @@ def output_metadata(indent=0):
             res += f"{i_str}_links.new(_env_tex_node.outputs['Color'], _bg_node.inputs['Color'])\n"
             res += f"{i_str}_links.new(_bg_node.outputs['Background'], _output_node.inputs['Surface'])\n\n"
 
-    output_path = scene.render.filepath.replace('\\', '\\\\')
+    if platform.system() == 'Windows':
+        output_path = scene.render.filepath.replace('\\', '\\\\')
+    else:
+        output_path = scene.render.filepath
     res += f"{i_str}_scene.render.filepath = '{output_path}'\n\n"
 
     return res

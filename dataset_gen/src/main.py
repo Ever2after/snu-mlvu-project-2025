@@ -38,13 +38,16 @@ def execute_bake_or_render(blender_path, scene_aug_path, script_path, idx):
     ], check=True)
 
 ##### CONFIG #####
-BLENDER_PATH = "C:\\blender_src\\build_windows_x64_vc17_Release\\bin\Release\\blender.exe"
+BLENDER_PATH = "C:\\Program Files\\Blender Foundation\\Blender 4.4\\blender.exe" # for Windows
 RENDER_BLENDER_PATH = "C:\\Program Files\\Blender Foundation\\Blender 4.4\\blender.exe"
+# "/Applications/Blender.app/Contents/MacOS/Blender" # for macOS
+# "/usr/bin/blender" # for Linux
+
 GEN_SCRIPT = os.path.abspath("generate_scene.py")
 BAKE_SCRIPT = os.path.abspath("bake_scene.py")
 RENDER_SCRIPT = os.path.abspath("render_scene.py")
 
-mode = "all" # ["scene_gen_only", "bake", "render", "both"]
+mode = "scene_gen_only" # ["scene_gen_only", "bake", "render", "all"]
 # "scene_gen_only": generate scenes and do not bake/render
 # "bake": generate scenes, bake but not render
 # "render": render scene given .blend file and fluid cache
