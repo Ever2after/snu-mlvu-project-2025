@@ -60,6 +60,10 @@ def write_summery():
         for camera in summary_dict["Camera"]:
             f.write(f"\t{camera}\n")
         f.write("\n")
+        f.write("DEFAULTS\n")
+        for param in default_values:
+            value = default_values[param]
+            f.write(f"\t{param}: {print_var(value)}\n")
         f.close()
 
 
@@ -269,11 +273,7 @@ def output_fluid_domain(mesh_name, name, settings, indent=0):
     res += f"{i_str}" + chkvar(top, "_dst_settings.cache_frame_start", settings.cache_frame_start)
     res += f"{i_str}" + chkvar(top, "_dst_settings.cache_frame_end", settings.cache_frame_end)
     res += f"{i_str}_dst_settings.cache_frame_end = round(_dst_settings.cache_frame_end * _fps_scale)\n"
-    if platform.system() == 'Windows':
-        cache_path = os.path.join(cache_dir, mesh_name).replace('\\', '\\\\')
-    else:
-        cache_path = os.path.join(cache_dir, mesh_name)
-    res += f"{i_str}_dst_settings.cache_directory = '{cache_path}'\n\n"
+    res += f"{i_str}_dst_settings.cache_directory = '//fluid_cache/{mesh_name}/'\n\n"
 
     # viscosity
     # if viscosity is invariable, use scene settings
@@ -730,7 +730,8 @@ def generate_code(out_dir, indent=0):
     res += f"{i_str})\n\n"
 
     scene_path = os.path.join(out_dir, "scene_aug.blend")
-    scene_path = scene_path.replace('\\', '\\\\')
+    if platform.system() == 'Windows':
+        scene_path = scene_path.replace('\\', '\\\\')
     res += f"{i_str}bpy.ops.wm.save_mainfile(filepath='{scene_path}')\n"
     res += f"{i_str}exit()\n"
     

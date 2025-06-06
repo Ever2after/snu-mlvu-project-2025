@@ -15,7 +15,7 @@ if '--' in args:
 else:
     p_args = parser.parse_args('')
 
-# reset fluid cache for all domains
+'''# reset fluid cache for all domains
 for obj in bpy.context.scene.objects:
     if obj.type == "MESH":
         mesh_name = obj.name
@@ -25,7 +25,7 @@ for obj in bpy.context.scene.objects:
                 if mod.domain_settings:
                     target_path = f"//fluid_cache/{mesh_name}"
                     mod.domain_settings.cache_directory = bpy.path.abspath(target_path)
-                    print(mod.domain_settings.cache_directory)
+                    print(mod.domain_settings.cache_directory)'''
 
 
 scene = bpy.context.scene

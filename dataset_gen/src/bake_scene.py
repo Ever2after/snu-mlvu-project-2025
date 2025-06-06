@@ -11,6 +11,7 @@ def bake_fluid_simulations():
     for obj in bpy.data.objects:
         for mod in obj.modifiers:
             if mod.type == 'FLUID' and mod.fluid_type == 'DOMAIN':
+                mod.domain_settings.cache_directory = os.path.join(p_args.cache, obj.name)
                 print(f"Baking fluid for domain: {obj.name}")
                 
                 # Set the object as active
@@ -23,7 +24,7 @@ def bake_fluid_simulations():
 
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--idx', type=int)
+parser.add_argument('--cache', type=str)
 
 args = sys.argv
 if '--' in args:
