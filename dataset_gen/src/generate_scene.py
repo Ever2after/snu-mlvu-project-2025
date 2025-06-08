@@ -266,6 +266,8 @@ def output_fluid_domain(mesh_name, name, settings, indent=0):
     res += f"{i_str}" + chkvar(top, "_dst_settings.resolution_max", settings.resolution_max)
     res += f"{i_str}" + chkvar(top, "_dst_settings.use_mesh", settings.use_mesh)
     res += f"{i_str}" + chkvar(top, "_dst_settings.cfl_condition", settings.cfl_condition)
+    res += f"{i_str}" + chkvar(top, "_dst_settings.timesteps_min", settings.timesteps_min)
+    res += f"{i_str}" + chkvar(top, "_dst_settings.timesteps_max", settings.timesteps_max)
     res += f"{i_str}" + chkvar(top, "_dst_settings.particle_radius", settings.particle_radius)
     res += f"{i_str}" + chkvar(top, "_dst_settings.particle_number", settings.particle_number)
     res += f"{i_str}" + chkvar(top, "_dst_settings.particle_randomness", settings.particle_randomness)
@@ -477,7 +479,8 @@ def output_mesh(mesh, indent=0):
     i_str = "    " * indent
 
     # save the mesh geometry as an obj file
-    save_geometry(mesh)
+    if not p_args.args_only:
+        save_geometry(mesh)
     
     # Write code to import the saved geometry in the generated .py file
     res += f"{i_str}###################\n"
@@ -742,7 +745,7 @@ def generate_code(out_dir, indent=0):
 # assume the scene is already loaded
 parser = argparse.ArgumentParser()
 parser.add_argument('--out_script_path', type=str)
-parser.add_argument('--skip_summary', action="store_true")
+parser.add_argument('--args_only', action="store_true")
 args = sys.argv
 if '--' in args:
     args = args[args.index('--') + 1:]
@@ -754,9 +757,10 @@ else:
 indent = 0; default_values = {}; out_dir = os.path.dirname(p_args.out_script_path)
 
 mesh_dir = os.path.join(out_dir, "meshes")
-os.makedirs(mesh_dir, exist_ok=True)
 cache_dir = os.path.join(out_dir, "fluid_cache")
-os.makedirs(cache_dir, exist_ok=True)
+if not p_args.args_only:
+    os.makedirs(mesh_dir, exist_ok=True)
+    os.makedirs(cache_dir, exist_ok=True)
 
 what_to_change = load_vars(os.path.join(out_dir, "sampleconf.py"))
 what_to_change_used = list(what_to_change.keys()) #  variable has not been consumed
@@ -779,6 +783,6 @@ with open(p_args.out_script_path, 'w') as f:
     f.close()
 
 # write summary
-if not p_args.skip_summary:
+if not p_args.args_only:
     write_summery()
 print("done!")
