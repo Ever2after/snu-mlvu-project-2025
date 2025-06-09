@@ -2,12 +2,16 @@ def _flow_des(a):
     size = a["flow_size"]
     vs = a["viscosity"]
     if vs != "high":
-        if size == "large amount of ":
-            return "The fluid impacts the container, rapidly filling it and spilling over the edges."
+        s = ""
+        if size == "big":
+            s = "The fluid impacts the container, rapidly filling it and spilling over the edges."
         else:
-            return "The fluid impacts the container and gradually fills it."
+            s = "The fluid impacts the container and gradually fills it."
+        if a["flow_loc"] == "corner":
+            s = s + " It first pours out at the container’s corners."
+        return s
     else:
-        return "The fluid slowly accumulates in the container, hardly flowing at all."
+        return "The fluid slowly accumulates in the container, spreading at an extremely slow pace."
 
 def _pi(a, scene_type):
     if scene_type == "free_fall":
@@ -43,9 +47,9 @@ def extract_annotation (param, type):
     fs = param.get("flow_size")
     if fs is not None:
         info["flow_size"] = (
-            "large amount of "
+            "big"
             if fs[0] > 1
-            else ""
+            else "small"
         )
     sm = param.get("sink_metal")
     if sm is not None:
@@ -61,7 +65,7 @@ def extract_annotation (param, type):
         if "flow_loc" in param.keys():
             info["flow_loc"] = (
                 "center" if param["flow_loc"] == [0,0,0]
-                else  "edge" if  param["flow_loc"] == [0.5,0.5,0]
+                else  "corner" if  param["flow_loc"] == [0.5,0.5,0]
                 else ""
             )
 
@@ -77,7 +81,7 @@ def extract_annotation (param, type):
         annot = (
             f"Visual Perception: "
             f"There is a {info['container_description']} container.\n"
-            f"A {info['flow_size']}fluid is released from a point directly above the container’s {info["flow_loc"]}, "
+            f"A fluid is released from a point directly above the container’s {info["flow_loc"]}, "
             f"and falls freely under gravity.\n" 
             f"{_flow_des(info)} \n"
             f"Physical Inference: "
