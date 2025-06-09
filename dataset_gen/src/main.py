@@ -122,6 +122,7 @@ for i in os.listdir("../scene"):
 
     for idx in range(len(sampler)):
         sample = sampler[idx]
+        if sample["viscosity"] != 0.02 or sample["flow_size"] != (1.5, 1.5, 1.5) or sample["flow_loc"] != (0.5, 0.5, 0): continue
         print(f"current: {idx + 1}/{len(sampler)}")
         for n in sample:
             print(f"\t{n}: {'Default' if sample[n] is None else sample[n]}")
@@ -142,18 +143,27 @@ for i in os.listdir("../scene"):
 
         # 3. bake scene
         scene_aug_path = f"../scene/{i}/output/{idx}/scene.blend"
+        cache_dir = None
         if mode in ["bake", "all"]:
             cache_dir = f"../scene/{i}/fluid_cache/{cache_dir_name}"
             if not os.path.exists(cache_dir):
                 # bake scene only when cache does not exist
                 execute_bake(BLENDER_PATH, scene_aug_path, BAKE_SCRIPT, cache_dir)
         
-        if mode in ["bake", "all"]:
+        # 3. render scene
+        if mode in ["render", "all"]:
             # copy generated fluid cache
+            if cache_dir is None:
+                with open(f"../scene/{i}/output/{idx}/params.log") as f:
+                    param_list = json.load(f)
+                cache_dir_name = param_list["_cache_dir_name"]
+                cache_dir = f"../scene/{i}/fluid_cache/{cache_dir_name}"
+
             output_fluid_cache_dir = f"../scene/{i}/output/{idx}/fluid_cache"
             os.makedirs(output_fluid_cache_dir, exist_ok=True)
             shutil.copytree(cache_dir, output_fluid_cache_dir, dirs_exist_ok=True)
-        
-        # 3. render scene
-        if mode in ["render", "all"]:
+
             execute_render(RENDER_BLENDER_PATH, scene_aug_path, RENDER_SCRIPT, idx)
+
+            # delete fluid cache
+            shutil.rmtree(output_fluid_cache_dir)
