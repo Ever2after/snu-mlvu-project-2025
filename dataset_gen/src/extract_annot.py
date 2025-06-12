@@ -10,8 +10,8 @@ scene_dir = os.path.normpath(os.path.join(current_dir, os.pardir, "scene"))
 videos_dataset = []
 annots = []
 
-scene_types = ["free_fall"]
-annot_dir = ["output", "output_freefall"]
+scene_types = ["free_fall", "obj_moving"]
+annot_dir = ["output_1", "output_freefall"]
 
 for scene_type in scene_types:
     base_dir = os.path.join(scene_dir, scene_type)
