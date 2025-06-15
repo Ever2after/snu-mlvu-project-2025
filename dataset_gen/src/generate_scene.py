@@ -625,7 +625,7 @@ def output_metadata(indent=0):
     for node in world.node_tree.nodes:
         if node.type == 'TEX_ENVIRONMENT':
             # Texture data
-            texture_name = os.path.basename(node.image.filepath.replace('\\', '/'))
+            texture_name = node.image.filepath.replace('\\', '/').split('/')[-1]
             texture_path = bpy.path.abspath(f"//texture/{texture_name}")
             if platform.system() == 'Windows':
                 texture_path = texture_path.replace('\\', '\\\\')

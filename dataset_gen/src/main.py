@@ -86,7 +86,7 @@ GEN_SCRIPT = os.path.abspath("generate_scene.py")
 BAKE_SCRIPT = os.path.abspath("bake_scene.py")
 RENDER_SCRIPT = os.path.abspath("render_scene.py")
 
-mode = "bake" # ["scene_gen_only", "bake", "render", "all"]
+mode = "all" # ["scene_gen_only", "bake", "render", "all"]
 # "scene_gen_only": generate scenes and do not bake/render
 # "bake": generate scenes, bake but not render
 # "render": render scene given .blend file and fluid cache
