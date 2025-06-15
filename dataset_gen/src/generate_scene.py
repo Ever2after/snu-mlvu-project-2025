@@ -295,7 +295,7 @@ def output_fluid_domain(mesh_name, name, settings, indent=0):
     return res
 
 
-def output_fluid_flow(mesh_name, name, settings, indent=0):
+def output_fluid_flow(mesh_name, mesh, name, settings, indent=0):
     res = ""
     i_str = "    " * indent
 
@@ -311,7 +311,60 @@ def output_fluid_flow(mesh_name, name, settings, indent=0):
     res += f"{i_str}" + chkvar(top, "_dst_settings.flow_source", settings.flow_source)
     res += f"{i_str}_dst_settings.use_initial_velocity = True\n"
     res += f"{i_str}" + chkvar(top, "_dst_settings.velocity_coord", tuple(settings.velocity_coord)) + "\n"
+
+    # save keyframe for when to stop flow
+    if settings.flow_behavior == "INFLOW":
+        anim_data = mesh.animation_data
+        if anim_data is not None:
+            res += output_fluid_flow_anim(anim_data, mesh_name, mesh, name, settings, indent)
     
+    return res
+
+
+def output_fluid_flow_anim(anim_data, mesh_name, mesh, name, settings, indent=0):
+    res = ""
+    i_str = "    " * indent
+
+    # find frame that disables flow
+    flow_disabled = None
+    data_path_name = None
+    for fcurve in anim_data.action.fcurves:
+        if "use_inflow" in fcurve.data_path.split("."):
+            data_path_name = fcurve.data_path
+            keyframes = sorted((kp.co[0], kp.co[1]) for kp in fcurve.keyframe_points)
+            for i in range(1, len(keyframes)):
+                prev_frame, prev_val = keyframes[i-1]
+                curr_frame, curr_val = keyframes[i]
+                if prev_val > 0.5 and curr_val <= 0.5:
+                    flow_disabled = curr_frame
+            break
+    
+    # output
+    stop_flow_fra = flow_disabled if flow_disabled is not None else -1
+    res += f"{i_str}" + chkvar(f"{mesh_name}.FLOW.stop_flow", "_stop_flow_fra", stop_flow_fra) + "\n"
+
+    # insert keyframes only when _stop_flow_fra is not -1
+    res += f"{i_str}if _stop_flow_fra > -1: \n"
+    i_str =  "    " * (indent + 1)
+
+    # frame 0
+    res += f"{i_str}bpy.context.scene.frame_set(1)\n"
+    res += f"{i_str}_dst_settings.use_inflow = 1\n"
+    res += f"{i_str}_imported_obj.keyframe_insert(data_path='{data_path_name}', frame=1)\n\n"
+
+    # frame t-1
+    res += f"{i_str}_kf_new_scene = round((_stop_flow_fra - 1) * _fps_scale)\n"
+    res += f"{i_str}bpy.context.scene.frame_set(_kf_new_scene)\n"
+    res += f"{i_str}_dst_settings.use_inflow = 1\n"
+    res += f"{i_str}_imported_obj.keyframe_insert(data_path='{data_path_name}', frame=_kf_new_scene)\n\n"
+
+    # frame t
+    res += f"{i_str}_kf_new_scene = round(_stop_flow_fra * _fps_scale)\n"
+    res += f"{i_str}bpy.context.scene.frame_set(_kf_new_scene)\n"
+    res += f"{i_str}_dst_settings.use_inflow = 0\n"
+    res += f"{i_str}_imported_obj.keyframe_insert(data_path='{data_path_name}', frame=_kf_new_scene)\n\n"
+    i_str = "    " * indent
+
     return res
 
 
@@ -518,7 +571,7 @@ def output_mesh(mesh, indent=0):
                 summary_dict["Mesh"][mesh.name]["Fluid"] = "DOMAIN"
             if mod.flow_settings:
                 res += f"{i_str}# flow settings\n"
-                res += output_fluid_flow(mesh.name, mod_key, mod.flow_settings, indent)
+                res += output_fluid_flow(mesh.name, mesh, mod_key, mod.flow_settings, indent)
                 summary_dict["Mesh"][mesh.name]["Fluid"] = "FLOW"
             if mod.effector_settings:
                 res += f"{i_str}# effector settings\n"

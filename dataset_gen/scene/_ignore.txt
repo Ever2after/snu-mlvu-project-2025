@@ -1,6 +1,6 @@
 scene_old
 water_slope
-obj_interaction
+slope
 splash
 free_fall
 ripple
