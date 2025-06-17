@@ -309,6 +309,7 @@ def output_fluid_flow(mesh_name, mesh, name, settings, indent=0):
     res += f"{i_str}" + chkvar(top, "_dst_settings.flow_type", settings.flow_type)
     res += f"{i_str}" + chkvar(top, "_dst_settings.flow_behavior", settings.flow_behavior)
     res += f"{i_str}" + chkvar(top, "_dst_settings.flow_source", settings.flow_source)
+    res += f"{i_str}" + chkvar(top, "_dst_settings.surface_distance", settings.surface_distance)
     res += f"{i_str}_dst_settings.use_initial_velocity = True\n"
     res += f"{i_str}" + chkvar(top, "_dst_settings.velocity_coord", tuple(settings.velocity_coord)) + "\n"
 
@@ -348,8 +349,9 @@ def output_fluid_flow_anim(anim_data, mesh_name, mesh, name, settings, indent=0)
     i_str =  "    " * (indent + 1)
 
     # frame 0
+    bpy.context.scene.frame_set(1)
     res += f"{i_str}bpy.context.scene.frame_set(1)\n"
-    res += f"{i_str}_dst_settings.use_inflow = 1\n"
+    res += f"{i_str}_dst_settings.use_inflow = {settings.use_inflow}\n"
     res += f"{i_str}_imported_obj.keyframe_insert(data_path='{data_path_name}', frame=1)\n\n"
 
     # frame t-1

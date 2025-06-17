@@ -13,7 +13,7 @@ what_to_change = {
 
     "Icosphere.location": "water_loc", 
 
-    "Icosphere.FLOW.stop_flow": "water_end", 
+    "Icosphere.FLOW.surface_distance": "water_size", 
 
     "Sun.rotation_euler" : "light_angle", 
 
@@ -47,9 +47,9 @@ values = {
         ((-0.1745, -0.0233, 2.2169),),
         ((-0.1745, 1.535, 2.2169),),
     ],
-    ('water_end',) : [
-        (66.0,),
-        (145.0,),
+    ('water_size',) : [
+        (2.0,),
+        (5.0,),
     ],
     ('light_angle',) : [
         ((0.3963, 0.127, -0.7037),),
