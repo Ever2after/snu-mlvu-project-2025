@@ -84,13 +84,14 @@ def _col (a):
 
 def _rip_des(a):
     if a['viscosity'] == "low" :
-        s = "Upon impact with the surface, the fluid flattens into a thin sheet that spreads outward before recoalescing inward.\n"
+        if a['water_size'] == "small":
+            s = "When the droplet contacts the surface, pronounced ripples radiate outward swiftly.\n"
+        else:
+            s = "When the droplet contacts the surface, it splashes on impact and pronounced ripples radiate outward swiftly.\n"
+    elif a['viscosity'] == "medium" :
+        s = "When the droplet contacts the surface, gentle ripples form and dissipate quickly.\n"
     else:
-        s = "When the fluid meets the surface, it slowly fans out in a gentle spread.\n"
-    if a['water_end'] == "mid":
-        s = s + "The fluid stops falling at the midpoint of the scene.\n"
-    else:
-        s = s + "The fluid continues to fall until the end of the scene.\n"
+        s = "When the droplet contacts the surface, it is absorbed with minimal ripple formation.\n"
     return s
 
 
@@ -148,13 +149,13 @@ def _pi(a, scene_type):
     elif scene_type == "ripple":
         reason = {
             "low": (
-                "the fluid produces clear ripples that propagate quickly and spread evenly"
+                "the droplet generates pronounced ripples that radiate outward rapidly"
             ),
             "medium": (
-                "the fluid exhibits only faint rippling and spreads slowly"
+                "the droplet creates ripples that form but quickly dissipate"
             ),
             "high": (
-                "the fluid produces no ripples and instead accumulates as a thick layer"
+                "the droplet is absorbed with almost no ripples formed"
             )
         }[a["viscosity"]]
     return (
@@ -315,22 +316,14 @@ def extract_annotation (param, type):
                 "clear, " if param["water_alpha"] == 0.995
                 else ""
             )
-       # if info["water_alpha"] == "clear, " and info["water_color"] == "":
-       #     info["water_alpha"] = "clear "
-
-        if "cam_loc" in param.keys():
-            info["cam_loc"] = (
-                "right" if param["cam_loc"] == [-8.40339, 16.8564, 8.03589]
-                else "upward" if param["cam_loc"] == [14.0975, -0.491662, 11.8147]
-                else "left"
-            )
-        if "water_end" in param.keys():
-            info["water_end"] = (
-                "mid" if param["water_end"] == 66 
-                else "all"
+        if "water_size" in param.keys():
+            info["water_size"] = (
+                "small" if param["water_size"] == 2.0
+                else "large"
             )
         annot = (
-            f"A {info['water_alpha']}{info['water_color']} fluid falls under gravity from above.\n"
+            f"There sits a pool of {info['water_alpha']}{info['water_color']} fluid below.\n"
+            f"A single droplet then falls onto its surface.\n"
             f"{_rip_des(info)}"
             f"{_pi(info, type)}"
         )
