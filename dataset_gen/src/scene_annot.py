@@ -65,7 +65,7 @@ def _obj_des(a):
     else:
         loc_1 = "rectangular" 
         loc_2 = "spherical"  
-    return  f"There are two objects in the scene: on the left, a {a[loc_1]} {loc_1} object, and to its right, a {a[loc_2]} {loc_2} object.\n"
+    return  f"In the scene two objects appear, with a {a[loc_1]} {loc_1} object on the left and a {a[loc_2]} {loc_2} object to its right.\n"
 
 def _col (a):
     if a['loc'] == "left": # 구가 먼저 충돌
