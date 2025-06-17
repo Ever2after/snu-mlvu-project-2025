@@ -55,7 +55,7 @@ def _obj_des(a):
         else:
             loc_1 = "rectangular" 
             loc_2 = "spherical"
-    if a["cam_loc"] == "right" :
+    elif a["cam_loc"] == "right" :
         if a["loc"] == "right" :
             loc_1 = "spherical"
             loc_2 = "rectangular"
@@ -80,7 +80,7 @@ def _col (a):
     if a['viscosity'] == "high":
         return col_1 + "\n"
     else:
-        return col_1 + col_2 + "\n"
+        return col_1 + " " +  col_2 + "\n"
 
 
 
