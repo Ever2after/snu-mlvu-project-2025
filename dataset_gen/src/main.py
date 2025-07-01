@@ -122,7 +122,6 @@ for i in os.listdir("../scene"):
 
     for idx in range(len(sampler)):
         sample = sampler[idx]
-        if sample["viscosity"] != 0.02 or sample["flow_size"] != (1.5, 1.5, 1.5) or sample["flow_loc"] != (0.5, 0.5, 0): continue
         print(f"current: {idx + 1}/{len(sampler)}")
         for n in sample:
             print(f"\t{n}: {'Default' if sample[n] is None else sample[n]}")
@@ -150,7 +149,7 @@ for i in os.listdir("../scene"):
                 # bake scene only when cache does not exist
                 execute_bake(BLENDER_PATH, scene_aug_path, BAKE_SCRIPT, cache_dir)
         
-        # 3. render scene
+        # 4. render scene
         if mode in ["render", "all"]:
             # copy generated fluid cache
             if cache_dir is None:

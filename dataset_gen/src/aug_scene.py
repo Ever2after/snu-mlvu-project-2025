@@ -99,6 +99,8 @@ def main(args):
             cfg_values = getattr(module, "values", None)
 
             for var_set in cfg_values:
+                assert isinstance(var_set, tuple) # do not forget "," for univariable set!
+
                 # generate candidate value set
                 to_append = []
                 for var_name in var_set:
