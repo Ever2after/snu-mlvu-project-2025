@@ -1,0 +1,956 @@
+[
+    {
+        "scene_type": "mixed",
+        "video": "mixed/mixed_0.mkv",
+        "video_list": [
+            "free_fall/output/388/render.mkv",
+            "free_fall/output/229/render.mkv"
+        ],
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nWhich scene's fluid is more viscous? Left or right?\n"
+            },
+            {
+                "from": "gpt",
+                "value": "left"
+            }
+        ]
+    },
+    {
+        "scene_type": "mixed",
+        "video": "mixed/mixed_1.mkv",
+        "video_list": [
+            "free_fall/output/16/render.mkv",
+            "obj_moving/output/412/render.mkv"
+        ],
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nWhich scene's fluid is more viscous? Left or right?\n"
+            },
+            {
+                "from": "gpt",
+                "value": "left"
+            }
+        ]
+    },
+    {
+        "scene_type": "mixed",
+        "video": "mixed/mixed_2.mkv",
+        "video_list": [
+            "obj_moving/output/394/render.mkv",
+            "free_fall/output/412/render.mkv"
+        ],
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nWhich scene's fluid is more viscous? Left or right?\n"
+            },
+            {
+                "from": "gpt",
+                "value": "right"
+            }
+        ]
+    },
+    {
+        "scene_type": "mixed",
+        "video": "mixed/mixed_3.mkv",
+        "video_list": [
+            "obj_moving/output/353/render.mkv",
+            "free_fall/output/377/render.mkv"
+        ],
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nWhich scene's fluid is more viscous? Left or right?\n"
+            },
+            {
+                "from": "gpt",
+                "value": "left"
+            }
+        ]
+    },
+    {
+        "scene_type": "mixed",
+        "video": "mixed/mixed_4.mkv",
+        "video_list": [
+            "free_fall/output/216/render.mkv",
+            "obj_moving/output/441/render.mkv"
+        ],
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nWhich scene's fluid is more viscous? Left or right?\n"
+            },
+            {
+                "from": "gpt",
+                "value": "right"
+            }
+        ]
+    },
+    {
+        "scene_type": "mixed",
+        "video": "mixed/mixed_5.mkv",
+        "video_list": [
+            "free_fall/output/444/render.mkv",
+            "free_fall/output/214/render.mkv"
+        ],
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nWhich scene's fluid is more viscous? Left or right?\n"
+            },
+            {
+                "from": "gpt",
+                "value": "left"
+            }
+        ]
+    },
+    {
+        "scene_type": "mixed",
+        "video": "mixed/mixed_6.mkv",
+        "video_list": [
+            "obj_moving/output/293/render.mkv",
+            "obj_moving/output/178/render.mkv"
+        ],
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nWhich scene's fluid is more viscous? Left or right?\n"
+            },
+            {
+                "from": "gpt",
+                "value": "right"
+            }
+        ]
+    },
+    {
+        "scene_type": "mixed",
+        "video": "mixed/mixed_7.mkv",
+        "video_list": [
+            "obj_moving/output/559/render.mkv",
+            "free_fall/output/229/render.mkv"
+        ],
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nWhich scene's fluid is more viscous? Left or right?\n"
+            },
+            {
+                "from": "gpt",
+                "value": "right"
+            }
+        ]
+    },
+    {
+        "scene_type": "mixed",
+        "video": "mixed/mixed_8.mkv",
+        "video_list": [
+            "obj_moving/output/476/render.mkv",
+            "obj_moving/output/0/render.mkv"
+        ],
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nWhich scene's fluid is more viscous? Left or right?\n"
+            },
+            {
+                "from": "gpt",
+                "value": "left"
+            }
+        ]
+    },
+    {
+        "scene_type": "mixed",
+        "video": "mixed/mixed_9.mkv",
+        "video_list": [
+            "free_fall/output/47/render.mkv",
+            "free_fall/output/366/render.mkv"
+        ],
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nWhich scene's fluid is more viscous? Left or right?\n"
+            },
+            {
+                "from": "gpt",
+                "value": "left"
+            }
+        ]
+    },
+    {
+        "scene_type": "mixed",
+        "video": "mixed/mixed_10.mkv",
+        "video_list": [
+            "obj_moving/output/359/render.mkv",
+            "obj_moving/output/532/render.mkv"
+        ],
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nWhich scene's fluid is more viscous? Left or right?\n"
+            },
+            {
+                "from": "gpt",
+                "value": "left"
+            }
+        ]
+    },
+    {
+        "scene_type": "mixed",
+        "video": "mixed/mixed_11.mkv",
+        "video_list": [
+            "free_fall/output/214/render.mkv",
+            "free_fall/output/414/render.mkv"
+        ],
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nWhich scene's fluid is more viscous? Left or right?\n"
+            },
+            {
+                "from": "gpt",
+                "value": "right"
+            }
+        ]
+    },
+    {
+        "scene_type": "mixed",
+        "video": "mixed/mixed_12.mkv",
+        "video_list": [
+            "obj_moving/output/285/render.mkv",
+            "free_fall/output/12/render.mkv"
+        ],
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nWhich scene's fluid is more viscous? Left or right?\n"
+            },
+            {
+                "from": "gpt",
+                "value": "left"
+            }
+        ]
+    },
+    {
+        "scene_type": "mixed",
+        "video": "mixed/mixed_13.mkv",
+        "video_list": [
+            "obj_moving/output/549/render.mkv",
+            "obj_moving/output/267/render.mkv"
+        ],
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nWhich scene's fluid is more viscous? Left or right?\n"
+            },
+            {
+                "from": "gpt",
+                "value": "left"
+            }
+        ]
+    },
+    {
+        "scene_type": "mixed",
+        "video": "mixed/mixed_14.mkv",
+        "video_list": [
+            "obj_moving/output/127/render.mkv",
+            "free_fall/output/357/render.mkv"
+        ],
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nWhich scene's fluid is more viscous? Left or right?\n"
+            },
+            {
+                "from": "gpt",
+                "value": "right"
+            }
+        ]
+    },
+    {
+        "scene_type": "mixed",
+        "video": "mixed/mixed_15.mkv",
+        "video_list": [
+            "free_fall/output/79/render.mkv",
+            "free_fall/output/456/render.mkv"
+        ],
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nWhich scene's fluid is more viscous? Left or right?\n"
+            },
+            {
+                "from": "gpt",
+                "value": "left"
+            }
+        ]
+    },
+    {
+        "scene_type": "mixed",
+        "video": "mixed/mixed_16.mkv",
+        "video_list": [
+            "free_fall/output/101/render.mkv",
+            "obj_moving/output/568/render.mkv"
+        ],
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nWhich scene's fluid is more viscous? Left or right?\n"
+            },
+            {
+                "from": "gpt",
+                "value": "right"
+            }
+        ]
+    },
+    {
+        "scene_type": "mixed",
+        "video": "mixed/mixed_17.mkv",
+        "video_list": [
+            "free_fall/output/366/render.mkv",
+            "free_fall/output/357/render.mkv"
+        ],
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nWhich scene's fluid is more viscous? Left or right?\n"
+            },
+            {
+                "from": "gpt",
+                "value": "right"
+            }
+        ]
+    },
+    {
+        "scene_type": "mixed",
+        "video": "mixed/mixed_18.mkv",
+        "video_list": [
+            "free_fall/output/379/render.mkv",
+            "free_fall/output/412/render.mkv"
+        ],
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nWhich scene's fluid is more viscous? Left or right?\n"
+            },
+            {
+                "from": "gpt",
+                "value": "right"
+            }
+        ]
+    },
+    {
+        "scene_type": "mixed",
+        "video": "mixed/mixed_19.mkv",
+        "video_list": [
+            "obj_moving/output/308/render.mkv",
+            "obj_moving/output/441/render.mkv"
+        ],
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nWhich scene's fluid is more viscous? Left or right?\n"
+            },
+            {
+                "from": "gpt",
+                "value": "left"
+            }
+        ]
+    },
+    {
+        "scene_type": "mixed",
+        "video": "mixed/mixed_20.mkv",
+        "video_list": [
+            "free_fall/output/229/render.mkv",
+            "free_fall/output/366/render.mkv"
+        ],
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nWhich scene's fluid is more viscous? Left or right?\n"
+            },
+            {
+                "from": "gpt",
+                "value": "left"
+            }
+        ]
+    },
+    {
+        "scene_type": "mixed",
+        "video": "mixed/mixed_21.mkv",
+        "video_list": [
+            "obj_moving/output/0/render.mkv",
+            "free_fall/output/466/render.mkv"
+        ],
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nWhich scene's fluid is more viscous? Left or right?\n"
+            },
+            {
+                "from": "gpt",
+                "value": "right"
+            }
+        ]
+    },
+    {
+        "scene_type": "mixed",
+        "video": "mixed/mixed_22.mkv",
+        "video_list": [
+            "free_fall/output/346/render.mkv",
+            "obj_moving/output/568/render.mkv"
+        ],
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nWhich scene's fluid is more viscous? Left or right?\n"
+            },
+            {
+                "from": "gpt",
+                "value": "right"
+            }
+        ]
+    },
+    {
+        "scene_type": "mixed",
+        "video": "mixed/mixed_23.mkv",
+        "video_list": [
+            "obj_moving/output/307/render.mkv",
+            "obj_moving/output/560/render.mkv"
+        ],
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nWhich scene's fluid is more viscous? Left or right?\n"
+            },
+            {
+                "from": "gpt",
+                "value": "left"
+            }
+        ]
+    },
+    {
+        "scene_type": "mixed",
+        "video": "mixed/mixed_24.mkv",
+        "video_list": [
+            "obj_moving/output/28/render.mkv",
+            "free_fall/output/140/render.mkv"
+        ],
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nWhich scene's fluid is more viscous? Left or right?\n"
+            },
+            {
+                "from": "gpt",
+                "value": "right"
+            }
+        ]
+    },
+    {
+        "scene_type": "mixed",
+        "video": "mixed/mixed_25.mkv",
+        "video_list": [
+            "obj_moving/output/118/render.mkv",
+            "obj_moving/output/560/render.mkv"
+        ],
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nWhich scene's fluid is more viscous? Left or right?\n"
+            },
+            {
+                "from": "gpt",
+                "value": "left"
+            }
+        ]
+    },
+    {
+        "scene_type": "mixed",
+        "video": "mixed/mixed_26.mkv",
+        "video_list": [
+            "free_fall/output/114/render.mkv",
+            "free_fall/output/377/render.mkv"
+        ],
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nWhich scene's fluid is more viscous? Left or right?\n"
+            },
+            {
+                "from": "gpt",
+                "value": "left"
+            }
+        ]
+    },
+    {
+        "scene_type": "mixed",
+        "video": "mixed/mixed_27.mkv",
+        "video_list": [
+            "obj_moving/output/178/render.mkv",
+            "free_fall/output/52/render.mkv"
+        ],
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nWhich scene's fluid is more viscous? Left or right?\n"
+            },
+            {
+                "from": "gpt",
+                "value": "right"
+            }
+        ]
+    },
+    {
+        "scene_type": "mixed",
+        "video": "mixed/mixed_28.mkv",
+        "video_list": [
+            "free_fall/output/44/render.mkv",
+            "obj_moving/output/549/render.mkv"
+        ],
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nWhich scene's fluid is more viscous? Left or right?\n"
+            },
+            {
+                "from": "gpt",
+                "value": "right"
+            }
+        ]
+    },
+    {
+        "scene_type": "mixed",
+        "video": "mixed/mixed_29.mkv",
+        "video_list": [
+            "obj_moving/output/418/render.mkv",
+            "obj_moving/output/196/render.mkv"
+        ],
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nWhich scene's fluid is more viscous? Left or right?\n"
+            },
+            {
+                "from": "gpt",
+                "value": "left"
+            }
+        ]
+    },
+    {
+        "scene_type": "mixed",
+        "video": "mixed/mixed_30.mkv",
+        "video_list": [
+            "obj_moving/output/39/render.mkv",
+            "free_fall/output/414/render.mkv"
+        ],
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nWhich scene's fluid is more viscous? Left or right?\n"
+            },
+            {
+                "from": "gpt",
+                "value": "right"
+            }
+        ]
+    },
+    {
+        "scene_type": "mixed",
+        "video": "mixed/mixed_31.mkv",
+        "video_list": [
+            "obj_moving/output/334/render.mkv",
+            "free_fall/output/16/render.mkv"
+        ],
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nWhich scene's fluid is more viscous? Left or right?\n"
+            },
+            {
+                "from": "gpt",
+                "value": "left"
+            }
+        ]
+    },
+    {
+        "scene_type": "mixed",
+        "video": "mixed/mixed_32.mkv",
+        "video_list": [
+            "obj_moving/output/39/render.mkv",
+            "free_fall/output/301/render.mkv"
+        ],
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nWhich scene's fluid is more viscous? Left or right?\n"
+            },
+            {
+                "from": "gpt",
+                "value": "left"
+            }
+        ]
+    },
+    {
+        "scene_type": "mixed",
+        "video": "mixed/mixed_33.mkv",
+        "video_list": [
+            "obj_moving/output/45/render.mkv",
+            "obj_moving/output/0/render.mkv"
+        ],
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nWhich scene's fluid is more viscous? Left or right?\n"
+            },
+            {
+                "from": "gpt",
+                "value": "left"
+            }
+        ]
+    },
+    {
+        "scene_type": "mixed",
+        "video": "mixed/mixed_34.mkv",
+        "video_list": [
+            "free_fall/output/125/render.mkv",
+            "obj_moving/output/302/render.mkv"
+        ],
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nWhich scene's fluid is more viscous? Left or right?\n"
+            },
+            {
+                "from": "gpt",
+                "value": "right"
+            }
+        ]
+    },
+    {
+        "scene_type": "mixed",
+        "video": "mixed/mixed_35.mkv",
+        "video_list": [
+            "free_fall/output/456/render.mkv",
+            "obj_moving/output/372/render.mkv"
+        ],
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nWhich scene's fluid is more viscous? Left or right?\n"
+            },
+            {
+                "from": "gpt",
+                "value": "right"
+            }
+        ]
+    },
+    {
+        "scene_type": "mixed",
+        "video": "mixed/mixed_36.mkv",
+        "video_list": [
+            "free_fall/output/456/render.mkv",
+            "obj_moving/output/521/render.mkv"
+        ],
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nWhich scene's fluid is more viscous? Left or right?\n"
+            },
+            {
+                "from": "gpt",
+                "value": "right"
+            }
+        ]
+    },
+    {
+        "scene_type": "mixed",
+        "video": "mixed/mixed_37.mkv",
+        "video_list": [
+            "free_fall/output/110/render.mkv",
+            "obj_moving/output/412/render.mkv"
+        ],
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nWhich scene's fluid is more viscous? Left or right?\n"
+            },
+            {
+                "from": "gpt",
+                "value": "left"
+            }
+        ]
+    },
+    {
+        "scene_type": "mixed",
+        "video": "mixed/mixed_38.mkv",
+        "video_list": [
+            "obj_moving/output/130/render.mkv",
+            "free_fall/output/140/render.mkv"
+        ],
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nWhich scene's fluid is more viscous? Left or right?\n"
+            },
+            {
+                "from": "gpt",
+                "value": "right"
+            }
+        ]
+    },
+    {
+        "scene_type": "mixed",
+        "video": "mixed/mixed_39.mkv",
+        "video_list": [
+            "free_fall/output/279/render.mkv",
+            "obj_moving/output/359/render.mkv"
+        ],
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nWhich scene's fluid is more viscous? Left or right?\n"
+            },
+            {
+                "from": "gpt",
+                "value": "right"
+            }
+        ]
+    },
+    {
+        "scene_type": "mixed",
+        "video": "mixed/mixed_40.mkv",
+        "video_list": [
+            "obj_moving/output/359/render.mkv",
+            "free_fall/output/466/render.mkv"
+        ],
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nWhich scene's fluid is more viscous? Left or right?\n"
+            },
+            {
+                "from": "gpt",
+                "value": "left"
+            }
+        ]
+    },
+    {
+        "scene_type": "mixed",
+        "video": "mixed/mixed_41.mkv",
+        "video_list": [
+            "free_fall/output/114/render.mkv",
+            "free_fall/output/279/render.mkv"
+        ],
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nWhich scene's fluid is more viscous? Left or right?\n"
+            },
+            {
+                "from": "gpt",
+                "value": "left"
+            }
+        ]
+    },
+    {
+        "scene_type": "mixed",
+        "video": "mixed/mixed_42.mkv",
+        "video_list": [
+            "obj_moving/output/111/render.mkv",
+            "obj_moving/output/118/render.mkv"
+        ],
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nWhich scene's fluid is more viscous? Left or right?\n"
+            },
+            {
+                "from": "gpt",
+                "value": "right"
+            }
+        ]
+    },
+    {
+        "scene_type": "mixed",
+        "video": "mixed/mixed_43.mkv",
+        "video_list": [
+            "free_fall/output/125/render.mkv",
+            "free_fall/output/81/render.mkv"
+        ],
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nWhich scene's fluid is more viscous? Left or right?\n"
+            },
+            {
+                "from": "gpt",
+                "value": "right"
+            }
+        ]
+    },
+    {
+        "scene_type": "mixed",
+        "video": "mixed/mixed_44.mkv",
+        "video_list": [
+            "free_fall/output/414/render.mkv",
+            "obj_moving/output/194/render.mkv"
+        ],
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nWhich scene's fluid is more viscous? Left or right?\n"
+            },
+            {
+                "from": "gpt",
+                "value": "left"
+            }
+        ]
+    },
+    {
+        "scene_type": "mixed",
+        "video": "mixed/mixed_45.mkv",
+        "video_list": [
+            "free_fall/output/229/render.mkv",
+            "free_fall/output/142/render.mkv"
+        ],
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nWhich scene's fluid is more viscous? Left or right?\n"
+            },
+            {
+                "from": "gpt",
+                "value": "right"
+            }
+        ]
+    },
+    {
+        "scene_type": "mixed",
+        "video": "mixed/mixed_46.mkv",
+        "video_list": [
+            "free_fall/output/377/render.mkv",
+            "free_fall/output/476/render.mkv"
+        ],
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nWhich scene's fluid is more viscous? Left or right?\n"
+            },
+            {
+                "from": "gpt",
+                "value": "right"
+            }
+        ]
+    },
+    {
+        "scene_type": "mixed",
+        "video": "mixed/mixed_47.mkv",
+        "video_list": [
+            "free_fall/output/112/render.mkv",
+            "obj_moving/output/519/render.mkv"
+        ],
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nWhich scene's fluid is more viscous? Left or right?\n"
+            },
+            {
+                "from": "gpt",
+                "value": "left"
+            }
+        ]
+    },
+    {
+        "scene_type": "mixed",
+        "video": "mixed/mixed_48.mkv",
+        "video_list": [
+            "free_fall/output/110/render.mkv",
+            "free_fall/output/366/render.mkv"
+        ],
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nWhich scene's fluid is more viscous? Left or right?\n"
+            },
+            {
+                "from": "gpt",
+                "value": "left"
+            }
+        ]
+    },
+    {
+        "scene_type": "mixed",
+        "video": "mixed/mixed_49.mkv",
+        "video_list": [
+            "obj_moving/output/329/render.mkv",
+            "free_fall/output/463/render.mkv"
+        ],
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nWhich scene's fluid is more viscous? Left or right?\n"
+            },
+            {
+                "from": "gpt",
+                "value": "left"
+            }
+        ]
+    },
+    {
+        "scene_type": "mixed",
+        "video": "mixed/mixed_50.mkv",
+        "video_list": [
+            "free_fall/output/287/render.mkv",
+            "free_fall/output/119/render.mkv"
+        ],
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nWhich scene's fluid is more viscous? Left or right?\n"
+            },
+            {
+                "from": "gpt",
+                "value": "right"
+            }
+        ]
+    },
+    {
+        "scene_type": "mixed",
+        "video": "mixed/mixed_51.mkv",
+        "video_list": [
+            "obj_moving/output/549/render.mkv",
+            "obj_moving/output/559/render.mkv"
+        ],
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nWhich scene's fluid is more viscous? Left or right?\n"
+            },
+            {
+                "from": "gpt",
+                "value": "left"
+            }
+        ]
+    },
+    {
+        "scene_type": "mixed",
+        "video": "mixed/mixed_52.mkv",
+        "video_list": [
+            "free_fall/output/346/render.mkv",
+            "free_fall/output/327/render.mkv"
+        ],
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nWhich scene's fluid is more viscous? Left or right?\n"
+            },
+            {
+                "from": "gpt",
+                "value": "right"
+            }
+        ]
+    }
+]

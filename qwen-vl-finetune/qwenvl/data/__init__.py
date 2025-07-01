@@ -1,31 +1,6 @@
 import re
 
 # Define placeholders for dataset paths
-CAMBRIAN_737K = {
-    "annotation_path": "PATH_TO_CAMBRIAN_737K_ANNOTATION",
-    "data_path": "",
-}
-
-CAMBRIAN_737K_PACK = {
-    "annotation_path": f"PATH_TO_CAMBRIAN_737K_ANNOTATION_PACKED",
-    "data_path": f"",
-}
-
-MP_DOC = {
-    "annotation_path": "PATH_TO_MP_DOC_ANNOTATION",
-    "data_path": "PATH_TO_MP_DOC_DATA",
-}
-
-CLEVR_MC = {
-    "annotation_path": "PATH_TO_CLEVR_MC_ANNOTATION",
-    "data_path": "PATH_TO_CLEVR_MC_DATA",
-}
-
-VIDEOCHATGPT = {
-    "annotation_path": "PATH_TO_VIDEOCHATGPT_ANNOTATION",
-    "data_path": "PATH_TO_VIDEOCHATGPT_DATA",
-}
-
 DEMO1 = {
     "annotation_path": "demo/single_images.json",
     "data_path": "",
@@ -36,14 +11,39 @@ DEMO2 = {
     "data_path": "demo/videos",
 }
 
+FREE_FALL = {
+    "annotation_path": "../data/qwen2.5-vl/free_fall/train.json",
+    "data_path": "../dataset_gen/scene",
+}
+
+OBJ_MOVING = {
+    "annotation_path": "../data/qwen2.5-vl/obj_moving/train.json",
+    "data_path": "../dataset_gen/scene",
+}
+
+OBJ_INTERACTION = {
+    "annotation_path": "../data/qwen2.5-vl/obj_interaction/train.json",
+    "data_path": "../dataset_gen/scene",
+}
+
+SLOPE = {
+    "annotation_path": "../data/qwen2.5-vl/slope/train.json",
+    "data_path": "../dataset_gen/scene",
+}
+
+RIPPLE = {
+    "annotation_path": "../data/qwen2.5-vl/ripple/train.json",
+    "data_path": "../dataset_gen/scene",
+}
+
 data_dict = {
-    "cambrian_737k": CAMBRIAN_737K,
-    "cambrian_737k_pack": CAMBRIAN_737K_PACK,
-    "mp_doc": MP_DOC,
-    "clevr_mc": CLEVR_MC,
-    "videochatgpt": VIDEOCHATGPT,
     "demo1": DEMO1,
-    "demo2": DEMO2
+    "demo2": DEMO2,
+    "free_fall": FREE_FALL,
+    "obj_moving": OBJ_MOVING,
+    "obj_interaction": OBJ_INTERACTION,
+    "slope": SLOPE,
+    "ripple": RIPPLE
 }
 
 

@@ -1,8 +1,8 @@
 export CUDA_VISIBLE_DEVICES=0
 
 python3 evaluate.py \
-    --resultDir ./output \
-    --name test2_results \
-    --metrics em,f1,rouge,bleu,meteor \
+    --resultPath ./output_no_context/full1/gpt-4o.json \
+    --name gpt-4o-full1 \
+    --metrics multi-choice \
     --outputDir ./eval \
     --detailed True

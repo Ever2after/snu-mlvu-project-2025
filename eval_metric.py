@@ -8,6 +8,7 @@ def normalize(text: str) -> str:
     Lowercase, remove punctuation, and strip whitespace.
     """
     text = text.lower()
+    text = text.split('final answer:')[-1].strip()
     return text.translate(str.maketrans('', '', string.punctuation)).strip()
 
 
@@ -53,6 +54,23 @@ def meteor(pred: str, gold: str) -> float:
         raise ImportError("nltk package not installed or missing METEOR support")
     return meteor_score([normalize(gold)], normalize(pred))
 
+def binary(pred: str, gold: str) -> float:
+    if 'left' in gold.lower() and 'left' in normalize(pred):
+        return 1.0
+    if 'right' in gold.lower() and 'right' in normalize(pred):
+        return 1.0
+    return 0.0
+
+def multi_choice(pred: str, gold: str) -> float:
+    pred = pred.lower().split('final answer:')[-1].strip()
+
+    gold = gold.lower().split('.')
+
+    if gold[0].strip() in pred:
+        return 1.0
+    if gold[1].strip() in pred:
+        return 1.0
+    return 0.0
 
 METRIC_FUNCS = {
     'em': exact_match,
@@ -60,4 +78,6 @@ METRIC_FUNCS = {
     'rouge': rouge_l,
     'bleu': bleu,
     'meteor': meteor,
+    'binary': binary,
+    'multi-choice': multi_choice
 }

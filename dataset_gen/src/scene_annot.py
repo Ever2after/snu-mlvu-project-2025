@@ -332,3 +332,170 @@ def extract_annotation (param, type):
     else:
         print("Undefined scene:", type)
         return ""
+    
+
+def get_single_scene_qas(param, type):
+    qas = []
+    # output: [q_type: str, options: list, answer: int] :list
+    if type == "free_fall":
+        # sink_color, flow_loc
+        color = param.get("color")
+        color = 0 if color == [0.292, 0.259, 0.361, 1] else 1 if color == [0.533, 0.706, 0.906, 1] else 2
+        qas.append({
+            "q_type": "obj_color",
+            "question": "What is the color of the container?",
+            "options": ["gray", "sky-blue", "yellow"],
+            "answer": color
+        })
+        flow_loc = param.get("flow_loc")
+        flow_loc = 0 if flow_loc == [0, 0, 0] else 1
+        qas.append({
+            # 컨테이너의 어떤 위치에 fluid가 release되는지 (공중에서)
+            "q_type": "fluid_loc",
+            "question": "Which location does the fluid fall from above the container?",
+            "options": ["center", "corner"],
+            "answer": flow_loc
+        })
+    elif type == "slope":
+        # sink_color, slope_color
+        sink_color = param.get("sink_color")
+        sink_color = 0 if sink_color == [0.7992, 0.5992, 0.5447, 1.0] else 1 if sink_color == [0.2462, 0.4564, 0.7991, 1.0] else 2
+        qas.append({
+            "q_type": "obj_color",
+            "question": "What is the color of the container?",
+            "options": ["white", "sky blue", "dark gray"],
+            "answer": sink_color
+        })
+        slope_color = param.get("slope_color")
+        slope_color = 0 if slope_color == [0.2462, 0.4564, 0.7991, 1.0] else 1
+        qas.append({
+            "q_type": "obj_color",
+            "question": "What is the color of the slope?",
+            "options": ["sky-blue", "yellow"],
+            "answer": slope_color
+        })
+    elif type == "ripple":
+        # water_color
+        water_color = param.get("water_color")
+        water_color = 0 if water_color == [0.8, 0.8, 0.8, 1.0] else 1 if water_color == [0.286, 0.4393, 0.8, 1.0] else 2
+        qas.append({
+            "q_type": "fluid_color",
+            "question": "What is the color of the water?",
+            "options": ["colorless", "blue", "dark"],
+            "answer": water_color
+        })
+    elif type == "obj_moving":
+        # fluid_color, obj_rot, obj_loc
+        fluid_color = param.get("color")
+        fluid_color = 0 if fluid_color == [0.8, 0.8, 0.8, 1.0] else 1 if fluid_color == [0.3202, 0.3107, 0.8002, 1.0] else 2
+        qas.append({
+            "q_type": "fluid_color",
+            "question": "What is the color of the fluid?",
+            "options": ["white", "slate", "dark"],
+            "answer": fluid_color
+        })
+        obj_rot = param.get("mid_rot")
+        obj_rot = 0 if obj_rot == [0, 0, 0] else 1
+        qas.append({
+            "q_type": "obj_rot",
+            "question": "Does the object rotate?",
+            "options": ["no", "yes"],
+            "answer": obj_rot
+        })
+        cam_loc = param.get("cam_loc")
+        cam_loc = 0 if cam_loc == [-0.5098, 4.2388, 25.8093] else 1 if cam_loc == [19.5479, 0.172, 6.7769] else 2
+        options = ["left side", "down side", "right side"]
+        # object가 fluid의 어떤 위치에서 움직이기 시작하는지 (되돌아오는 위치)
+        qas.append({
+            "q_type": "obj_loc",
+            "question": "Where does the object start moving in the fluid?",
+            "options": options,
+            "answer": cam_loc
+        })
+    elif type == "obj_interaction":
+        # water_color, sphere/cube_color, cube_loc, collision
+        water_color = param.get("water_color")
+        water_color = 0 if water_color == [0.8, 0.8, 0.8, 1.0] else 1
+        qas.append({
+            "q_type": "fluid_color",
+            "question": "What is the color of the fluid?",
+            "options": ["white", "blue"],
+            "answer": water_color
+        })
+        sphere_color = param.get("sphere_color")
+        sphere_color = 0 if sphere_color == [0.8, 0.8, 0.8, 1.0] else 1 if sphere_color == [0.8003, 0.0769, 0.0612, 1.0] else 2
+        qas.append({
+            "q_type": "obj_color",
+            "question": "What is the color of the spherical object?",
+            "options": ["white", "red", "black"],
+            "answer": sphere_color
+        })
+        cube_color = param.get("cube_color")
+        cube_color = 0 if cube_color == [0.213, 0.8001, 0.0682, 1.0] else 1
+        qas.append({
+            "q_type": "obj_color",
+            "question": "What is the color of the rectangular object?",
+            "options": ["green", "white"],
+            "answer": cube_color
+        })
+        cam_loc = param.get("cam_loc")
+        cam_loc = 0 if cam_loc == [-8.40339, 16.8564, 8.03589] else 1 if cam_loc == [14.0975, -0.491662, 11.8147] else 2
+        options = ["right", "upward", "left"]
+        # fluid가 어떤 위치에서부터 object에 접근하는지
+        qas.append({
+            "q_type": "fluid_direction",
+            "question": "From which location does the fluid approach the objects?",
+            "options": options,
+            "answer": cam_loc
+        })
+        # obj와 fluid가 충돌하는 순서
+        loc = param.get("cube_loc")
+        loc = 0 if loc[0] == 0.0 else 1
+        qas.append({
+            "q_type": "collision",
+            "question": "Which object does the fluid collide with first?",
+            "options": ["spherical", "rectangular"],
+            "answer": loc
+        })
+    else:
+        raise ValueError(f"Unknown scene type: {type}")
+
+    return qas
+
+
+def get_mixed_scene_qa(param1, param2, type):
+    if type == "free_fall":
+        # flow_size
+        size1 = param1.get("flow_size")
+        size2 = param2.get("flow_size")
+        return {
+            "q_type": "flow_amount",
+            "question": "Which scene has a larger amount of fluid released?",
+            "options": ["left", "right", "equal"],
+            "answer": 0 if size1[0] > size2[0] else 1 if size1[0] < size2[0] else 2
+        }
+    elif type == "ripple":
+        # water_size
+        size1 = param1.get("water_size")
+        size2 = param2.get("water_size")
+        return {
+            "q_type": "fluid_amount",
+            "question": "Which scene has a larger droplet of fluid released?",
+            "options": ["left", "right", "equal"],
+            "answer": 0 if size1 > size2 else 1 if size1 < size2 else 2
+        }
+    elif type == "mixed":
+        viscosity1 = param1.get("viscosity")
+        viscosity2 = param2.get("viscosity")
+        viscosity1 = 0 if viscosity1 < 0.0001 else 1 if viscosity1 < 0.001 else 2 if viscosity1 < 0.01 else 3
+        viscosity2 = 0 if viscosity2 < 0.0001 else 1 if viscosity2 < 0.001 else 2 if viscosity2 < 0.01 else 3
+        if viscosity1 == viscosity2:
+            return None
+        return {
+            "q_type": "fluid_viscosity",
+            "question": "Which scene has a higher viscosity of fluid?",
+            "options": ["left", "right"],
+            "answer": 0 if viscosity1 > viscosity2 else 1
+        }
+    else:
+        raise ValueError(f"Unknown scene type: {type}")

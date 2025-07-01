@@ -8,8 +8,8 @@ from tqdm import tqdm
 
 def parse_args():  
     parser = argparse.ArgumentParser(description='Evaluate QA metrics on jsonl results')
-    parser.add_argument('--resultDir', '-r', required=True, default= './output', help='Directory to results.jsonl')
-    parser.add_argument('--name', '-n', required=True, default= 'test2_results', type=str, help='result file to evaluate')
+    parser.add_argument('--resultPath', '-r', required=True, type=str)
+    parser.add_argument('--name', '-n', required=True, type=str)
     parser.add_argument('--metrics', '-m', default='em,f1',
                         help='Comma-separated list of metrics: em,f1,rouge,bleu,meteor')
     parser.add_argument('--outputDir', '-o', default='./eval',
@@ -36,12 +36,12 @@ def save_summary(summary_scores, num_examples, out_path):
 # result : id query result answer
 def main(args):
     metrics = [m.strip() for m in args.metrics.split(',')]
-    if not set(metrics).issubset(['em', 'f1', 'rouge', 'bleu', 'meteor']):
+    if not set(metrics).issubset(['em', 'f1', 'rouge', 'bleu', 'meteor', 'binary', 'multi-choice' ]):
         print("Check the metrics")
         return
 
     results = []
-    with open(os.path.join(args.resultDir, f'{args.name}.json'), 'r', encoding='utf-8') as f:
+    with open(args.resultPath, 'r', encoding='utf-8') as f:
         results = json.load(f)
 
     detailed_records = []
@@ -64,7 +64,8 @@ def main(args):
         detailed_records.append(result)
     
     os.makedirs(args.outputDir, exist_ok=True)
-    summary_path  = os.path.join(args.outputDir, f'{args.name}_eval_summary.json')
+    os.makedirs(os.path.join(args.outputDir, args.name), exist_ok=True)
+    summary_path  = os.path.join(args.outputDir, f'{args.name}/eval_summary.json')
 
     num_examples = len(results)
     summary_scores = {
@@ -74,7 +75,7 @@ def main(args):
 
     save_summary(summary_scores, num_examples, summary_path)
     if args.detailed:
-        detailed_path = os.path.join(args.outputDir, f'{args.name}_eval_detailed.jsonl')
+        detailed_path = os.path.join(args.outputDir, f'{args.name}/eval_detailed.jsonl')
         save_detailed(detailed_records, detailed_path)
     
 

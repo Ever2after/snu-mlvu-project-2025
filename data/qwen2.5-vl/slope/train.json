@@ -1,0 +1,4440 @@
+[
+    {
+        "scene_type": "slope",
+        "video": "slope/output/167/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/337/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/17/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/224/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/0/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/316/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a yellow, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/67/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/122/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/255/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/100/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/335/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a yellow, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/25/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/223/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/202/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/68/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/222/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/257/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/306/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/268/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow, steep slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/295/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/235/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/154/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/120/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/148/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/31/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/129/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/248/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/137/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/183/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue, steep slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/119/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/314/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a yellow, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/229/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/16/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/200/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/328/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a yellow, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/95/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue, steep slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/6/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/126/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/244/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/42/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/264/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow, steep slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/274/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow, steep slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/307/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/302/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/71/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/265/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow, steep slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/84/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue, steep slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/23/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/177/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue, steep slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/149/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/51/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/277/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow, steep slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/285/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow, steep slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/217/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/61/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/329/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a yellow, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/2/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/254/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/250/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/32/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/262/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/157/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/261/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/275/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow, steep slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/240/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/292/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/182/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue, steep slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/213/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/245/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/99/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/105/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/24/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/300/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/162/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/70/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/112/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/273/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow, steep slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/186/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue, steep slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/91/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue, steep slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/76/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue, steep slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/209/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/208/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/185/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue, steep slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/36/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/303/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/93/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue, steep slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/175/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue, steep slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/243/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/253/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/239/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/121/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/341/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/45/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/7/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/343/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/281/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow, steep slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/38/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/104/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/291/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/132/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/8/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/144/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/125/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/238/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/118/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/346/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/230/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/81/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue, steep slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/82/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue, steep slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/336/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/252/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/57/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/165/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/123/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/290/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/96/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/59/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/63/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/234/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/98/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/156/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/9/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/161/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/315/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a yellow, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/187/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue, steep slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/141/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/201/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/189/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue, steep slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/326/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a yellow, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/199/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/133/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/289/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/60/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/347/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/138/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/89/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue, steep slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/301/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/340/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/135/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/345/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/310/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/214/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/344/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/85/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue, steep slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/207/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/86/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue, steep slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/249/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/178/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue, steep slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/233/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/339/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/102/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/331/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a yellow, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/348/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/293/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/27/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/176/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue, steep slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/22/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/263/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/174/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue, steep slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/236/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/304/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/194/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/5/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/294/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/322/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a yellow, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/197/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/225/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/163/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/103/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/146/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/109/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/288/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/80/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue, steep slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/19/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/117/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/4/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/111/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/10/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/206/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/18/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/90/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue, steep slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/171/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue, steep slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/143/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/128/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/276/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow, steep slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/286/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow, steep slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/332/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a yellow, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/97/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/342/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/44/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/312/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a yellow, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/127/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/203/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/297/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/247/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/74/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue, steep slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/65/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/334/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a yellow, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/260/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/196/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/54/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/77/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue, steep slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/52/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/1/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/270/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow, steep slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/153/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/101/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/56/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/11/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/308/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/170/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue, steep slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/134/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/228/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/151/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/215/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/266/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow, steep slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/298/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/28/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/256/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/88/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue, steep slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/29/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/131/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/237/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/279/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow, steep slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/317/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a yellow, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/106/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/321/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a yellow, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/155/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/124/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/283/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow, steep slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/169/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue, steep slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/113/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/69/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/20/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/172/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue, steep slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/12/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/267/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow, steep slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/193/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/349/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/39/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/272/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow, steep slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/226/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/21/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/152/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/145/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/241/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/198/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/83/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue, steep slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/184/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue, steep slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/338/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/94/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue, steep slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/40/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/87/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue, steep slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/320/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a yellow, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/107/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/192/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/323/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a yellow, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/333/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a yellow, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/15/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/72/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue, steep slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/35/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/205/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/73/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue, steep slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/269/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow, steep slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/3/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/278/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow, steep slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/318/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a yellow, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/158/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/139/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/92/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue, steep slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/14/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/136/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/13/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/219/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/115/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/142/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/325/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a yellow, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/188/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue, steep slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/179/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue, steep slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/350/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/114/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/246/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/79/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue, steep slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/108/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/259/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/53/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/180/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue, steep slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/159/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/147/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/26/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/216/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/181/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue, steep slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/210/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/62/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/168/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue, steep slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/296/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/287/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow, steep slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/30/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/284/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow, steep slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/66/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/190/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue, steep slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/49/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/221/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/47/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/43/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/46/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/34/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/242/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/78/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue, steep slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/191/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue, steep slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/130/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/313/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a yellow, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/218/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow, gentle slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/160/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A clear fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/48/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a sky-blue slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid glides down the slope with almost no resistance, the fluid’s viscosity is estimated as low."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/212/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid clings to the slope and moves very slowly downward.\nAs the fluid sticks to the incline and barely moves, the fluid’s viscosity is estimated as high."
+            }
+        ]
+    },
+    {
+        "scene_type": "slope",
+        "video": "slope/output/204/render.mkv",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<video>\nDescribe the video."
+            },
+            {
+                "from": "gpt",
+                "value": "A white fluid initially rests atop a yellow slope.\nBelow the slope lies a sky blue container.\nThe fluid flows down the slope and into the container.\nAs the fluid clings lightly to the slope and flows slowly downward, the fluid’s viscosity is estimated as medium."
+            }
+        ]
+    }
+]

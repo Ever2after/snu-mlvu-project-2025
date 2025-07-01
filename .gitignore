@@ -1,8 +1,9 @@
 output
+mixed3
+eval
 __pycache__
 wandb
 fluid_cache
-output
 meshes
 texture
 fluid_cache

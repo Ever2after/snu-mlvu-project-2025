@@ -18,7 +18,7 @@ class Model:
             if 'sft' in self.model_name:
                 print("Loading SFT model...")
                 MODEL_ID = self.model_path
-                processor = AutoProcessor.from_pretrained("qwen/qwen2.5-vl-3b-instruct")
+                processor = AutoProcessor.from_pretrained("qwen/" + self.model_name.split('-sft')[0] + "-instruct")
             else:
                 MODEL_ID = f"qwen/{self.model_name}-instruct"
                 processor = AutoProcessor.from_pretrained(MODEL_ID)
@@ -100,10 +100,18 @@ class Model:
 
     def generate(self, query, data_path, **kwargs):
         q = extract_question(query)
+        # if kwargs.get("refer_context", False) and 'context' in query.keys():
+        #     # context가 부정확 할 수 도 있으므로, 최종적으로는 video를 직접 보고 답변
+        #     q += "\nThese contexts may not be accurate, please refer to the video directly.\n"
+        q += "\nAnswer format should be 'Final answer: {idx}. {answer}"
+        
         if 'image' in query.keys() and isinstance(query['image'], str):
             query['image'] = [query['image']]
         if 'video' in query.keys() and isinstance(query['video'], str):
             query['video'] = [query['video']]
+            
+        if kwargs.get("gen_context", False):
+            q = "Describe the video."
 
         if 'qwen2.5-vl' in self.model_name:
             from qwen_vl_utils import process_vision_info
@@ -129,7 +137,7 @@ class Model:
                     "role": "user",
                     "content": []
                 }]
-            if kwargs.get("context_exist", False) and 'context' in query.keys():
+            if kwargs.get("refer_context", False) and 'context' in query.keys():
                 messages[0]['content'].append({
                     "type": "text",
                     "text": query['context']
@@ -191,7 +199,7 @@ class Model:
             image_tensor = [_image.to(dtype=torch.float16, device=device) for _image in image_tensor]
 
             conv_template = "qwen_1_5"  # Make sure you use correct chat template for different models
-            if kwargs.get("context_exist", False) and 'context' in query.keys():
+            if kwargs.get("refer_context", False) and 'context' in query.keys():
                 question = " ".join([DEFAULT_IMAGE_TOKEN for _ in query['image']]) + "\n" + query['context'] + "\n" + q
             else:
                 question = " ".join([DEFAULT_IMAGE_TOKEN for _ in query['image']]) + "\n" + q
@@ -218,7 +226,7 @@ class Model:
                 pixel_values_ = [load_image(os.path.abspath(os.path.join(data_path, image_path)), max_num=12).to(torch.bfloat16).cuda() for image_path in query['images']]  
                 pixel_values = torch.cat(pixel_values_, dim=0)
                 num_patches_list = [pixel_values.size(0) for pixel_values in pixel_values_]
-                if kwargs.get("context_exist", False) and 'context' in query.keys():
+                if kwargs.get("refer_context", False) and 'context' in query.keys():
                     q = query['context'] + "\n" + q     
                 question = "\n".join([f'Image-{idx+1}: <image>' for idx in range(len(query['image']))]) + "\n" + q
                 generation_config = dict(**generate_kwargs(**kwargs), do_sample=True)
@@ -233,7 +241,7 @@ class Model:
                 pixel_values, num_patches_list = load_video(video_path, num_segments=num_segments, max_num=1)
                 pixel_values = pixel_values.to(torch.bfloat16).cuda()
                 video_prefix = ''.join([f'Frame{i+1}: <image>\n' for i in range(len(num_patches_list))])
-                if kwargs.get("context_exist", False) and 'context' in query.keys():
+                if kwargs.get("refer_context", False) and 'context' in query.keys():
                     q = query['context'] + "\n" + q
                 question = video_prefix + q
                 # Frame1: <image>\nFrame2: <image>\n...\nFrame8: <image>\n{question}
@@ -363,7 +371,7 @@ class Model:
                 pixel_values, num_patches_list = load_video(video_path, num_segments=num_segments, max_num=1)
                 pixel_values = pixel_values.to(torch.bfloat16).to(self.model.device)
                 video_prefix = "".join([f"Frame{i+1}: <image>\n" for i in range(len(num_patches_list))])
-                if kwargs.get("context_exist", False) and 'context' in query.keys():
+                if kwargs.get("refer_context", False) and 'context' in query.keys():
                     q = query['context'] + "\n" + q
                 question = video_prefix + q
                 output1 = self.model.chat(self.tokenizer, pixel_values, question, generation_config, num_patches_list=num_patches_list, history=None, return_history=False)
@@ -387,7 +395,7 @@ class Model:
                         "type": "input_image",
                         "image_url": f"data:image/jpeg;base64,{frame_b64}"
                     })
-            if kwargs.get("context_exist", False) and 'context' in query:
+            if kwargs.get("refer_context", False) and 'context' in query:
                 input[1]['content'].append({
                     "type": "input_text",
                     "text": query['context']
@@ -421,6 +429,9 @@ class Model:
                 f"https://generativelanguage.googleapis.com/v1beta/"
                 f"models/{MODEL_ID}:generateContent?key={GEMINI_API_KEY}"
             )
+            
+            if kwargs.get("refer_context", False) and 'context' in query:
+                q = query['context'] + "\n" + q
 
             parts = [
                 {
@@ -470,7 +481,8 @@ class Model:
                 url,
                 json={ "contents": contents, "generationConfig": generationConfig }
             )
-            print(response.json())
+            
+            # print(response.json())
 
             if response.status_code == 200:
                 return response.json()['candidates'][0]['content']['parts'][0]['text']
