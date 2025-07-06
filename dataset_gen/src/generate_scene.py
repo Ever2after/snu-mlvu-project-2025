@@ -539,11 +539,12 @@ def output_mesh(mesh, indent=0):
     
     # Write code to import the saved geometry in the generated .py file
     res += f"{i_str}###################\n"
+    res += f"{i_str}" + chkvar(f"{mesh.name}.src_file", '_src_file', mesh.name)
     res += f"{i_str}# Mesh: {mesh.name}\n"
     if platform.system() == 'Windows':
-        res += f"{i_str}bpy.ops.wm.obj_import(filepath=os.path.join(_base_path, '{mesh.name}.obj').replace('/', '\\\\'))\n"
+        res += f"{i_str}bpy.ops.wm.obj_import(filepath=os.path.join(_base_path, _src_file + '.obj').replace('/', '\\\\'))\n"
     else:
-        res += f"{i_str}bpy.ops.wm.obj_import(filepath=os.path.join(_base_path, '{mesh.name}.obj'))\n"
+        res += f"{i_str}bpy.ops.wm.obj_import(filepath=os.path.join(_base_path, _src_file + '.obj'))\n"
 
     # After import, apply transform (location/rotation/scale)
     res += f"{i_str}_imported_obj = bpy.context.selected_objects[0]\n"
@@ -559,6 +560,7 @@ def output_mesh(mesh, indent=0):
     res += f"{i_str}_imported_obj.hide_render = {mesh.hide_render}\n"
 
     # Write more code to import the material for each mesh
+    print(mesh.name)
     res += output_mesh_mat(mesh.material_slots, indent)
 
     # if fluid data exists, output that as well
