@@ -94,6 +94,15 @@ def _rip_des(a):
         s = "When the droplet contacts the surface, it is absorbed with minimal ripple formation.\n"
     return s
 
+def _slope2_des(a):
+    vc = a["viscosity"]
+    if vc == "low":
+        return "The fluid falls onto the plank, then rapidly slides down and merges with the pool.\n"
+    elif vc == "medium":
+        return "The fluid falls onto the plank, slides down, and merges with the pool.\n"
+    else:
+        return "The fluid falls onto the plank, adheres to its surface, and then slowly slides down to join the pool.\n"
+
 
 def _pi(a, scene_type):
     if scene_type == "free_fall":
@@ -156,6 +165,18 @@ def _pi(a, scene_type):
             ),
             "high": (
                 "the droplet is absorbed with almost no ripples formed"
+            )
+        }[a["viscosity"]]
+    elif scene_type == "test_slope":
+        reason = {
+            "low": (
+                "the fluid slides swiftly down the incline and generates strong ripples in the pool"
+            ),
+            "medium": (
+                "the fluid slides down at a moderate pace and produces moderate rippling in the pool"
+            ),
+            "high": (
+                "the fluid clings to the incline and creeps slowly, leaving the pool surface nearly calm"
             )
         }[a["viscosity"]]
     return (
@@ -328,6 +349,35 @@ def extract_annotation (param, type):
             f"{_pi(info, type)}"
         )
         return annot
+    elif type == "test_slope":
+        if "water_color" in param.keys():
+            info["water_color"] = (
+                "colorless" if param["water_color"] == [0.8, 0.8, 0.8, 1.0]
+                else "yellow"
+            )   
+        if "plane_color" in param.keys():
+            info["plane_color"] = (
+                "sky-blue" if param["plane_color"] == [0.8, 0.8, 0.8, 1.0]
+                else "blue" if param["plane_color"] == [0.0468, 0.0287, 0.2982, 1.0]
+                else "black"
+            )  
+        if "plane_angle" in param.keys():
+            info["plane_angle"] = (
+                "steep" if param["plane_angle"] == [0.0, 0.35, 0.0]
+                else "gentle"
+            )
+        if "water_size" in param.keys():
+	        info["water_size"] = (
+		        "little" if param["water_size"] == 5
+		        else "large"
+		)
+        annot = (
+            f"A {info['water_color']} fluid rests in a pool below a {info['plane_color']} plank placed at a {info['plane_angle']} incline.\n"
+            f"{_slope2_des(info)}"
+            f"{_pi(info, type)}"
+        )
+        return annot    
+
 
     else:
         print("Undefined scene:", type)
