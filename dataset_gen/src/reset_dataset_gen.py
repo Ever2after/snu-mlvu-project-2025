@@ -3,7 +3,7 @@ import sys
 import shutil
 os.chdir(os.path.dirname(os.path.abspath(sys.argv[0])))
 
-save_file = ["texture", "sampleconf.py", "scene.blend"]
+save_file = ["meshes", "texture", "sampleconf.py", "scene.blend"]
 
 with open(f"../scene/_ignore.txt") as f:
     ignore_list = f.readlines()

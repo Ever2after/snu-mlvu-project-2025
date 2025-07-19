@@ -274,6 +274,7 @@ def output_fluid_domain(mesh_name, name, settings, indent=0):
     res += f"{i_str}" + chkvar(top, "_dst_settings.particle_band_width", settings.particle_band_width)
     res += f"{i_str}" + chkvar(top, "_dst_settings.cache_frame_start", settings.cache_frame_start)
     res += f"{i_str}" + chkvar(top, "_dst_settings.cache_frame_end", settings.cache_frame_end)
+    res += f"{i_str}" + chkvar(top, "_dst_settings.use_fractions", settings.use_fractions)
     res += f"{i_str}_dst_settings.cache_frame_end = round(_dst_settings.cache_frame_end * _fps_scale)\n"
     res += f"{i_str}_dst_settings.cache_directory = '//fluid_cache/{mesh_name}/'\n\n"
 
