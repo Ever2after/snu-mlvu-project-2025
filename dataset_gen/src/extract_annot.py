@@ -1,7 +1,7 @@
 import os
 import ast
 import json
-from scene_annot import extract_annotation
+from scene_annot import extract_annotation, extract_formatted_annotation
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
 datagen_dir = os.path.normpath(os.path.join(current_dir, os.pardir))
@@ -10,7 +10,7 @@ scene_dir = os.path.normpath(os.path.join(current_dir, os.pardir, "scene"))
 videos_dataset = []
 annots = []
 
-scene_types = ["obj_interaction", "slope", "ripple"]
+scene_types = ["obj_interaction", "slope", "free_fall"]
 annot_dir = ["output_1", "output_2", "output"]
 
 for scene_type in scene_types:
@@ -40,7 +40,8 @@ for scene_type in scene_types:
                         params_dict = {}
 
             # annotation 생성
-            annotation = extract_annotation(params_dict, scene_type)
+            #annotation = extract_annotation(params_dict, scene_type)
+            annotation = extract_formatted_annotation(params_dict, scene_type)
 
             only_annot = {f"{i}" : annotation}
             annots.append(only_annot)

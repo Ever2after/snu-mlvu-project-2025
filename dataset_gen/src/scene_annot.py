@@ -262,7 +262,7 @@ def extract_annotation (param, type):
     elif type == "slope":
         if "sink_color" in param.keys():
             info["sink_color"] = (
-                "sky blue" if param["sink_color"] == [0.2462, 0.4564, 0.7991, 1.0]
+                "sky-blue" if param["sink_color"] == [0.2462, 0.4564, 0.7991, 1.0]
                 else "white" if param["sink_color"] == [0.7992, 0.5992, 0.5447, 1.0]
                 else "dark gray"
             )   
@@ -377,12 +377,232 @@ def extract_annotation (param, type):
             f"{_pi(info, type)}"
         )
         return annot    
+    else:
+        print("Undefined scene:", type)
+        return ""
 
+import yaml
+
+def extract_formatted_annotation (param, type):
+    info = {
+        "fluidPresent":   True,
+        "fluidColor":     None,
+        "fluidBehavior":  None,
+        "flowDirection":  None,
+        "flowSize":     None,
+        "objects":        None,
+        "objectMoving": False,
+        "slopeAngle":     None,
+        "viscosityLevel": None
+    }
+    #common
+    vc = param.get("viscosity")
+    if vc is not None:
+        info["viscosityLevel"] = (
+            "low" if vc <= 0
+            else "middle" if vc < 0.008
+            else "high"
+        )
+        if type == "obj_interaction":
+            info["viscosityLevel"] = (
+                "low" if vc <= 0
+                else "middle" if vc < 0.0008
+                else "high"
+            )
+
+        
+ ##done
+    if type == "free_fall":
+        #param: flow size, flow loc, color, sink_metal
+        info["fluidPresent"] = True
+        info["fluidDirection"] = "downward"
+        info["fluidColor"] = "colorless"
+        fs = param.get("flow_size")
+        if fs is not None:
+            info["flowSize"] = (
+                "big"
+                if fs[0] > 1
+                else "small"
+            )
+        #sm = param.get("sink_metal")
+        #if sm is not None:
+        #    info["sink_metal"] = (
+        #        "reflective, "
+        #        if sm != 0
+        #        else ""
+        #    )
+        #if "flow_loc" in param.keys():
+        #    info["flow_loc"] = (
+        #        "center" if param["flow_loc"] == [0,0,0]
+        #        else  "corner" if  param["flow_loc"] == [0.5,0.5,0]
+        #        else ""
+        #    )
+        obj_list = []
+        if "color" in param.keys():
+            if param["color"] == [0.292, 0.259, 0.361, 1]:
+                obj_list.append("gray container")
+            elif param["color"] == [0.533, 0.706, 0.906, 1]:
+                obj_list.append("sky-blue container")
+            elif param["color"] == [0.906, 0.792, 0.452, 1]:
+                obj_list.append("yellow container")
+        info["objects"] = obj_list
+        info["fluidBehavior"] = (
+            "The fluid falls freely under gravity, lands on the container."
+        )
+
+### Slope
+    elif type == "slope":
+        info["fluidPresent"] = True
+        info["fluidColor"] = "colorless"
+        info["flowDirection"] = "downward"
+        obj_list = []
+        if "sink_color" in param.keys():
+            if param["sink_color"] == [0.7992, 0.5992, 0.5447, 1.0]:
+                obj_list.append("white container")
+            elif param["sink_color"] == [0.2462, 0.4564, 0.7991, 1.0]:
+                obj_list.append("sky-blue container")
+            else:
+                obj_list.append("dark gray container")
+
+        #if "alpha" in param.keys():
+        #    info["alpha"] = (
+        #        "white" if param["alpha"] == 0.718
+        #        else "clear"
+        #    )  
+        if "slope_color" in param.keys():
+            if param["slope_color"] == [0.2462, 0.4564, 0.7991, 1.0]:
+                obj_list.append("sky-blue slope")
+            else:
+                obj_list.append("yellow slope")
+        info["objects"] = obj_list
+        if "slope_rot" in param.keys():
+            info["slopeAngle"] = (
+                "steep" if param["slope_rot"][1] == 0.1878
+                else "gentle" if param["slope_rot"][1] == -0.5236
+                else "middle"
+            ) 
+            ##고점도는 container에 흘러내리지 않음
+        if param["slope_rot"][1] == -0.5236:
+            info["fluidBehavior"] = (
+                "The fluid falls on slope, flows down the slope."
+            )
+        elif param["slope_rot"][1] == 0.1878:
+            if info["viscosityLevel"] == "low":
+                info["fluidBehavior"] = (
+                    "The fluid falls on slope, slides down the slope, falls on the container."
+                )
+            else: ### high에서 유체가 아예 안 보이는 현상
+                info["fluidBehavior"] = (
+                    "The fluid falls on slope, slides down the slope."
+                )
+        else:
+            if info["viscosityLevel"] == "high":
+                info["fluidBehavior"] = (
+                    "The fluid falls on slope, slides down the slope."
+                )
+            else:
+                info["fluidBehavior"] = (
+                    "The fluid falls on slope, slides down the slope, falls on the container."
+                )
+
+    ##
+    elif type == "obj_interaction":
+        info["fluidPresent"] = True
+
+        if "water_color" in param.keys():
+            info["fluidColor"] = (
+                "colorless" if param["water_color"] == [0.8, 0.8, 0.8, 1.0]
+                else "blue"
+            ) 
+        obj_list = []
+        if "sphere_color" in param.keys():
+            if param["sphere_color"] == [0.8, 0.8, 0.8, 1.0]:
+                obj_list.append("white sphere")
+            elif param["sphere_color"] == [0.8003, 0.0769, 0.0612, 1.0]:
+                obj_list.append("red sphere")
+            else:
+                obj_list.append("black sphere")
+        if "cube_color" in param.keys():
+            if param["cube_color"] == [0.213, 0.8001, 0.0682, 1.0]:
+                obj_list.append("green cube")  
+            else:
+                obj_list.append("white cube")
+        info["objects"] = obj_list
+        if "cam_loc" in param.keys():
+            info["flowDirection"] = (
+                "from right to left" if param["cam_loc"] == [-8.40339, 16.8564, 8.03589]
+                else "downward" if param["cam_loc"] == [14.0975, -0.491662, 11.8147]
+                else "from left to right"
+            )
+        if "cube_loc" in param.keys(): #첫번째 캠위치 기준
+            if param["cube_loc"][0] == 0.0: #구가 왼
+                first_col = "sphere"
+                second_col = "cube"
+            else:
+                first_col = "cube"
+                second_col = "sphere"
+
+        if info["viscosityLevel"] == "high":
+            info["fluidBehavior"] = (
+                f"The fluid flows toward the objects, collides with {first_col}."
+            )
+        else:
+            info["fluidBehavior"] = (
+                f"The fluid flows toward the objects, collides with {first_col} and then with {second_col}."
+            )
+    elif type == "ripple": 
+        info["fluidPresent"] = True
+        info["flowDirection"] = "downward"
+        if "water_color" in param.keys():
+            if param["water_color"] == [0.8, 0.8, 0.8, 1.0]:
+                info["fluidColor"] = "colorless"
+            elif param["water_color"] == [0.286, 0.4393, 0.8, 1.0]:
+                info["fluidColor"] = "blue"
+            else:
+                info["fluidColor"] = "dark"
+        if "water_size" in param.keys():
+            info["flowSize"] = (
+                "small" if param["water_size"] == 2.0
+                else "large"
+            )
+        if info["viscosityLevel"] == "high":
+            info["fluidBehavior"] = (
+                "The fluid falls onto the pool, merges with the pool."
+            )
+        else:
+            info["fluidBehavior"] = (
+                "The fluid falls onto the pool, merges with the pool, generates ripples."
+            )
+
+    elif type == "obj_moving":
+        info["fluidPresent"] = True
+        info["flowDirection"] = "therein"
+        info["objectMoving"] = True
+        info["objects"] = ["white cylinder"]
+        if "color" in param.keys():
+            info["fluidColor"] = (
+                "white" if param["color"] == [0.8, 0.8, 0.8, 1.0]
+                else "slate" if param["color"] == [0.3202, 0.3107, 0.8002, 1.0]
+                else "dark"
+            )
+        info["fluidBehavior"] = (
+            "The fluid contains a white cylinderical object, is displaced by moving object."
+        )  
 
     else:
         print("Undefined scene:", type)
         return ""
     
+    annot = yaml.safe_dump(
+    info,
+    default_flow_style=False, 
+    sort_keys=False  
+    )
+    return annot
+
+
+
+
 
 def get_single_scene_qas(param, type):
     qas = []
@@ -413,7 +633,7 @@ def get_single_scene_qas(param, type):
         qas.append({
             "q_type": "obj_color",
             "question": "What is the color of the container?",
-            "options": ["white", "sky blue", "dark gray"],
+            "options": ["white", "sky-blue", "dark gray"],
             "answer": sink_color
         })
         slope_color = param.get("slope_color")
