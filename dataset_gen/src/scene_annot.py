@@ -103,6 +103,34 @@ def _slope2_des(a):
     else:
         return "The fluid falls onto the plank, adheres to its surface, and then slowly slides down to join the pool.\n"
 
+def _t_obj_des(a):
+    mv = a["movement"]
+    vc = a["viscosity"]
+
+    if vc == "low":
+        if mv == "in the middle":
+            return "The fluid strikes the object, splashes, and pools quickly on the floor.\n"
+        elif mv == "at side":
+            return "The fluid grazes the object, splashes, and pools quickly on the floor.\n"
+        else:  
+            return "The fluid hits and brushes past the object, splashes, and pools quickly on the floor.\n"
+
+    elif vc == "middle":
+        if mv == "in the middle":
+            return "The fluid strikes the object, runs along it, and pools on the floor.\n"
+        elif mv == "at side":
+            return "The fluid passes the object and pools on the floor.\n"
+        else: 
+            return "The fluid hits and passes the object, and pools on the floor.\n"
+
+    else:
+        if mv == "in the middle":
+            return "The fluid strikes the object, then adheres strongly.\n"
+        elif mv == "at side":
+            return "The fluid passes the object and pools slowly with strong adhesion.\n"
+        else: 
+            return "The fluid hits and passes the object, and pools slowly with strong adhesion.\n"
+		
 
 def _pi(a, scene_type):
     if scene_type == "free_fall":
@@ -179,6 +207,18 @@ def _pi(a, scene_type):
                 "the fluid clings to the incline and creeps slowly, leaving the pool surface nearly calm"
             )
         }[a["viscosity"]]
+    elif scene_type == "test_obj_moving":
+        reason = {
+            "low": (
+                "the fluid briefly wraps each object and then separates cleanly with minimal adhesion"
+            ),
+            "medium": (
+                "the fluid partially coats the objects; a thin film clears soon after contact"
+            ),
+            "high": (
+                "the fluid adheres strongly, forming a thick coating that drains slowly"
+            )
+        }[a["viscosity"]]
     return (
         f"As {reason}, "
         f"the fluid’s viscosity is estimated as {a['viscosity']}."
@@ -201,8 +241,6 @@ def extract_annotation (param, type):
                 else "medium" if vc < 0.0008
                 else "high"
             )
-
-        
 
     if type == "free_fall":
         #param: flow size, flow loc, color, sink_metal
@@ -377,6 +415,39 @@ def extract_annotation (param, type):
             f"{_pi(info, type)}"
         )
         return annot    
+    elif type == "test_obj_moving": 
+        if "color" in param.keys():
+            info["obj_color"] = (
+                "white" if param["color"] == [0.8, 0.8, 0.8, 1.0]
+                else "yellow" if param["color"] == [0.8, 0.6542, 0.0309, 1.0]
+                else "sky-blue"
+            ) 
+        if "flow_size" in param.keys():
+            info["water_size"] = (
+                "small" if param["flow_size"][0] == 0.3
+                else "large"
+            )
+        if "obj_type" in param.keys():
+		        info["obj"] = param["obj_type"]
+        if "mid_rot" in param.keys():
+            info["rot"] = (
+                False if param["mid_rot"][0] == 0.0
+                else True
+            ) 
+        if "end_loc" in param.keys():
+            info["movement"] = (
+                "in the middle" if param["end_loc"][1] == 0.75
+                else "at side" if param["end_loc"][1] == 1.7185
+                else "upward in the middle and downward at side"
+            )                   
+        annot = (
+            f"A colorless fluid falls from above.\n"
+            f"In mid-air, a {info['obj_color']} {info['obj']} moves upward and downward{', while rotating' if info['rot'] else ''}.\n"
+            f"{_t_obj_des(info)}"
+            f"{_pi(info, type)}"
+        )
+        return annot
+    
     else:
         print("Undefined scene:", type)
         return ""
