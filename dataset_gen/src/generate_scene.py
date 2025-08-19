@@ -537,6 +537,10 @@ def output_mesh(mesh, indent=0):
     # save the mesh geometry as an obj file
     if not p_args.args_only:
         save_geometry(mesh)
+    else:
+        # save the mesh only when the name of the mesh has changed
+        if mesh.name + ".obj" in os.listdir(mesh_dir):
+            save_geometry(mesh)
     
     # Write code to import the saved geometry in the generated .py file
     res += f"{i_str}###################\n"
