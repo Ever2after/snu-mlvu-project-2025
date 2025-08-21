@@ -660,6 +660,90 @@ def extract_formatted_annotation (param, type):
             "The fluid contains a white cylinderical object, is displaced by moving object."
         )  
 
+
+    elif type == "test_slope":
+        info["fluidPresent"] = True
+        if "water_color" in param.keys():
+            if param["water_color"] == [0.8, 0.8, 0.8, 1.0]:
+                info["fluidColor"] = "colorless"
+            else:
+                info["fluidColor"] = "yellow"
+        info["flowDirection"] = "downward"
+        obj_list = []
+        obj_list.append("sky-blue container")
+        if "plane_color" in param.keys():
+            if param["plane_color"] == [0.8, 0.8, 0.8, 1.0]:
+                obj_list.append("sky-blue plank")
+            elif param["plane_color"] == [0.0468, 0.0287, 0.2982, 1.0]:
+                obj_list.append("blue plank")
+            else:
+                obj_list.append("black plank")
+        info["objects"] = obj_list
+        if "plane_angle" in param.keys():
+            info["slopeAngle"] = (
+                "steep" if param["plane_angle"] == [0.0, 0.35, 0.0]
+                else "gentle"
+        )
+        if "water_size" in param.keys():
+            info["flowSize"] = (
+                "small" if param["water_size"] == 5
+                else "large"
+            )
+        if info["viscosityLevel"] == "high":
+            info["fluidBehavior"] = (
+                "The fluid falls onto the plank, adheres to its surface, slowly slides down."
+            )
+        elif info["viscosityLevel"] == "medium":
+            info["fluidBehavior"] = (
+                "The fluid falls onto the plank, slides down the plank, merges with the pool."
+            )
+        else:
+            info["fluidBehavior"] = (
+                "The fluid falls onto the plank, slides down the plank, merges with the pool."
+            )
+    elif type == "test_obj_moving":
+        info["fluidPresent"] = True
+        info["flowDirection"] = "downward"
+        info["objectMoving"] = True
+        info["fluidColor"] = "colorless"
+        if "flow_size" in param.keys():
+            info["flowSize"] = (
+                "small" if param["flow_size"][0] == 0.3
+                else "large"
+            )
+        if "obj_color" in param.keys():
+            color = (
+                "white" if param["obj_color"] == [0.8, 0.8, 0.8, 1.0]
+                else "yellow" if param["obj_color"] == [0.8, 0.6542, 0.0309, 1.0]
+                else "sky-blue"
+            )
+        if "obj_type" in param.keys():
+            info["objects"] = [color + f"{param['obj_type']}"]
+
+        if "mid_rot" in param.keys():
+            info["objectRotating"] = (
+                False if param["mid_rot"][0] == 0.0
+                else True
+            ) 
+        #if "end_loc" in param.keys():
+        #    movement = (
+        #        "in the middle" if param["end_loc"][1] == 0.75
+        #        else "at side" if param["end_loc"][1] == 1.7185
+        #        else "upward in the middle and downward at side"
+        #    )                   
+        if info["viscosityLevel"] == "high":
+            info["fluidBehavior"] = (
+                f"The fluid falls, object moves upward and downward{', while rotating' if info['objectRotating'] else ''}."
+            )
+        elif info["viscosityLevel"] == "medium":
+            info["fluidBehavior"] = (
+                f"The fluid falls onto the floor, object moves upward and downward{', while rotating' if info['objectRotating'] else ''}, then the fluid is displaced by moving object."
+            )
+        else:
+            info["fluidBehavior"] = (
+                f"The fluid falls onto the floor, object moves upward and downward{', while rotating' if info['objectRotating'] else ''}, then the fluid is displaced by moving object."
+            )
+
     else:
         print("Undefined scene:", type)
         return ""
