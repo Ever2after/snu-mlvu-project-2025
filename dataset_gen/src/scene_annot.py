@@ -108,28 +108,22 @@ def _t_obj_des(a):
     vc = a["viscosity"]
 
     if vc == "low":
-        if mv == "in the middle":
-            return "The fluid strikes the object, splashes, and pools quickly on the floor.\n"
-        elif mv == "at side":
-            return "The fluid grazes the object, splashes, and pools quickly on the floor.\n"
-        else:  
-            return "The fluid hits and brushes past the object, splashes, and pools quickly on the floor.\n"
+        if mv == "in the middle" or mv == "at side":
+            return "The fluid strikes the object, splashes, and pools quickly on the floor.\\n"
+        else:
+            return "The fluid hits and brushes past the object, splashes, and pools quickly on the floor.\\n"
 
     elif vc == "middle":
-        if mv == "in the middle":
-            return "The fluid strikes the object, runs along it, and pools on the floor.\n"
-        elif mv == "at side":
-            return "The fluid passes the object and pools on the floor.\n"
-        else: 
-            return "The fluid hits and passes the object, and pools on the floor.\n"
+        if mv == "in the middle" or mv == "at side":
+            return "The fluid strikes the object, runs along it, and pools on the floor.\\n"
+        else:
+            return "The fluid hits and passes the object, and pools on the floor.\\n"
 
     else:
-        if mv == "in the middle":
-            return "The fluid strikes the object, then adheres strongly.\n"
-        elif mv == "at side":
-            return "The fluid passes the object and pools slowly with strong adhesion.\n"
-        else: 
-            return "The fluid hits and passes the object, and pools slowly with strong adhesion.\n"
+        if mv == "in the middle" or mv == "at side":
+            return "The fluid strikes the object, then adheres strongly.\\n"
+        else:
+            return "The fluid hits and passes the object, and pools slowly with strong adhesion.\\n"
 		
 
 def _pi(a, scene_type):
@@ -428,7 +422,7 @@ def extract_annotation (param, type):
                 else "large"
             )
         if "obj_type" in param.keys():
-		        info["obj"] = param["obj_type"]
+            info["obj"] = param["obj_type"]
         if "mid_rot" in param.keys():
             info["rot"] = (
                 False if param["mid_rot"][0] == 0.0
@@ -711,10 +705,10 @@ def extract_formatted_annotation (param, type):
                 "small" if param["flow_size"][0] == 0.3
                 else "large"
             )
-        if "obj_color" in param.keys():
+        if "color" in param.keys():
             color = (
-                "white" if param["obj_color"] == [0.8, 0.8, 0.8, 1.0]
-                else "yellow" if param["obj_color"] == [0.8, 0.6542, 0.0309, 1.0]
+                "white" if param["color"] == [0.8, 0.8, 0.8, 1.0]
+                else "yellow" if param["color"] == [0.8, 0.6542, 0.0309, 1.0]
                 else "sky-blue"
             )
         if "obj_type" in param.keys():
@@ -733,15 +727,15 @@ def extract_formatted_annotation (param, type):
         #    )                   
         if info["viscosityLevel"] == "high":
             info["fluidBehavior"] = (
-                f"The fluid falls, object moves upward and downward{', while rotating' if info['objectRotating'] else ''}."
+                f"The fluid falls, object moves upward and downward{', while rotating' if info['objectRotating'] else ''}, the fluid is displaced by moving object."
             )
         elif info["viscosityLevel"] == "medium":
             info["fluidBehavior"] = (
-                f"The fluid falls onto the floor, object moves upward and downward{', while rotating' if info['objectRotating'] else ''}, then the fluid is displaced by moving object."
+                f"The fluid falls, object moves upward and downward{', while rotating' if info['objectRotating'] else ''}, the fluid is displaced by moving object."
             )
         else:
             info["fluidBehavior"] = (
-                f"The fluid falls onto the floor, object moves upward and downward{', while rotating' if info['objectRotating'] else ''}, then the fluid is displaced by moving object."
+                f"The fluid falls, object moves upward and downward{', while rotating' if info['objectRotating'] else ''}, the fluid is disturbed by moving object."
             )
 
     else:
@@ -751,7 +745,8 @@ def extract_formatted_annotation (param, type):
     annot = yaml.safe_dump(
     info,
     default_flow_style=False, 
-    sort_keys=False  
+    sort_keys=False,
+    width=float("inf")  
     )
     return annot
 
